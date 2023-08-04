@@ -16,7 +16,7 @@
  :post-date-format             "yyyy-MM-dd"
  :archive-group-format         "yyyy MMMM"
  :sass-src                     []
- :sass-path                    "sass"
+ :sass-path                    "node_modules/sass/sass.js"
  :theme                        "lotus"
  :resources                    ["img" "icons"]
  :keep-files                   [".git" "CNAME"]
