@@ -1,0 +1,29 @@
+<div class="post-header">
+    <div id="post-meta">
+        <h1>{{post.title}}</h1>
+        <div class="byline">
+            <span class="date">{{post.date|date:longDate}}</span>
+            {% if post.author %}
+            <span class="author">By: {{post.author}}</span>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div>
+    {% if post.toc %}{{post.toc|safe}}{% endif %}
+    {{post.content|safe}}
+</div>
+{% if post.tags|not-empty %}
+<div id="post-tags">
+    <br/>
+    <b>Tags: </b>
+    {% for tag in post.tags %}
+    <a href="{{tag.uri}}">{{tag.name}}</a>
+    {% endfor %}
+</div>
+{% endif %}
+<div>
+    <br/>
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">This blog post</span> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/JohnnyJayJay">JohnnyJayJay</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p>
+</div>
+<br/>
