@@ -13,7 +13,8 @@ concurrency:
   cancel-in-progress: false
 
 defaults:
-  working-directory: ${{ github.workspace }}
+  run:
+    working-directory: ${{ github.workspace }}
 
 jobs:
   build:
