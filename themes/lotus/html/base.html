@@ -13,28 +13,28 @@
         {% style "css/normalize.css" %}
         {% style "css/blog.css" %}
         {% style "css/lotus-highlightjs.min.css" %}
-        <link rel="apple-touch-icon" sizes="57x57" href="/blog/icons/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/blog/icons/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/blog/icons/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/blog/icons/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/blog/icons/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/blog/icons/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/blog/icons/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/blog/icons/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="/blog/icons/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="/blog/icons/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
-        <link rel="manifest" href="/blog/icons/manifest.json">
+        <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+        <link rel="manifest" href="/icons/manifest.json">
         <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/blog/icons/ms-icon-144x144.png">
+        <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
     </head>
     <body>
         <aside id="sidebar">
             <div id="logo">
                 <a title="{{title}}" href="{{index-uri}}">
-                    <img class="icon" src="{{blog-prefix}}/img/icon.png">
+                    <img class="icon" src="/img/icon.png">
                     <div class="text desktop-and-tablet-only">{{title}}</div>
                     <div class="text mobile-only">{{title}}</div>
                 </a>
@@ -44,7 +44,7 @@
                 <nav id="menucont">
                     <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
                     <label for="menu-checkbox" class="menutitle">
-                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="{{blog-prefix}}/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
+                        <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
                     </label>
                     <ul class="menu">
                         <li {% if home %} class="active" {% endif %}><a title="Home" href="{{index-uri}}"><div class="menu-item-text">Home</div></a></li>
@@ -63,8 +63,8 @@
 
                 <nav id="socialmedia">
                     <ul>
-                        <li><a title="GitHub" href="https://github.com/JohnnyJayJay" rel="external"><svg class="icon icon-github-circled"><use xlink:href="{{blog-prefix}}/img/icons.svg#icon-github-circled"></use></svg></a></li>
-                        <li><a title="RSS Feed" href="{{rss-uri}}"><svg class="icon icon-rss-squared"><use xlink:href="{{blog-prefix}}/img/icons.svg#icon-rss-squared"></use></svg></a></li>
+                        <li><a title="GitHub" href="https://github.com/JohnnyJayJay" rel="external"><svg class="icon icon-github-circled"><use xlink:href="/img/icons.svg#icon-github-circled"></use></svg></a></li>
+                        <li><a title="RSS Feed" href="{{rss-uri}}"><svg class="icon icon-rss-squared"><use xlink:href="/img/icons.svg#icon-rss-squared"></use></svg></a></li>
                     </ul>
                 </nav>
             </nav>
