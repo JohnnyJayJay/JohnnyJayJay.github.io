@@ -12,7 +12,7 @@
         <style>
 
          .center {
-             font-size: 6rem;
+             font-size: 4rem;
              margin: auto;
              text-align: center;
              font-family: sans-serif;
@@ -26,9 +26,11 @@
              margin: 0;
          }
 
-         body.dark {
-             color: white;
-             background-color: black;
+         @media (prefers-color-scheme: dark) {
+             body {
+                 color: white;
+                 background-color: black;
+             }
          }
 
          .sm {
@@ -50,5 +52,4 @@
 
 
     </body>
-    {% script "js/darkmode.js" %}
 </html>
