@@ -1,0 +1,20 @@
+{% extends "/html/base.html" %}
+{% block subtitle %}Posts by {{author}}{% endblock %}
+{% block content %}
+<h1 class="no-anchor">Posts by {{author}}</h1>
+
+<dl>
+    {% for group in groups %}
+    <dt>{{group.group}}</dt>
+    <dd>
+        <ul>
+            {% for post in group.posts %}
+            <li>
+                {{post.date|date:"MMM dd"}} - <a href="{{post.uri}}">{{post.title}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </dd>
+    {% endfor %}
+</dl>
+{% endblock %}

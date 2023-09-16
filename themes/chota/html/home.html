@@ -1,0 +1,14 @@
+{% extends "/html/base.html" %}
+
+{% block subtitle %}Home{% endblock %}
+
+{% block content %}
+{% include "/html/post-content.html" %}
+{% endblock %}
+
+{% block after-content %}
+<!-- TODO: include comment component here -->
+{% with prev-title=post.prev.title prev-uri=post.prev.uri next-title=post.next.title next-uri=post.next.uri %}
+{% include "/html/prev-next.html" %}
+{% endwith %}
+{% endblock %}

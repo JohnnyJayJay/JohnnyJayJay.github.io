@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="{% if lang %}{{lang}}{% else %}en{% endif %}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block subtitle %}{% endblock %} - {{title}}</title>
+        <meta name="description" content="{{description}}">
+        {% block meta %}
+        <meta name="keywords" content="{{keywords}}">
+        {% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {% style "css/chota.min.css" %}
+        {% style "css/base.css" %}
+
+        <style>
+         @import url("{{blog-prefix}}/css/hjs-light.min.css") (prefers-color-scheme: light);
+         @import url("{{blog-prefix}}/css/hjs-dark.min.css") (prefers-color-scheme: dark);
+        </style>
+
+        {% script "js/highlight.min.js" %}
+    </head>
+    <body class="container">
+        <nav class="nav">
+            <div class="nav-left">
+
+                <a class="title-grid" href="{{index-uri}}">
+                    <div class="title-code is-center">{{title-code}}</div>
+                    <div class="title-name is-center">{{site-title}}</div>
+                </a>
+
+                <div class="tabs">
+                    <a {% if home %}class="active"{% endif %} href="{{index-uri}}">Home</a>
+                    <a {% if archives %}class="active"{% endif %} href="{{archives-uri}}">Archives</a>
+                    {% if tags|not-empty %}
+                    <a {% ifequal uri tags-uri %}class="active"{% endifequal %} href="{{tags-uri}}">Tags</a>
+                    {% endif %}
+                    {% for nav-page in navbar-pages %}
+                    <a {% ifequal page.uri nav-page.uri %}class="active"{% endifequal %}href="{{nav-page.uri}}">{{nav-page.title}}</a>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <div class="nav-right">
+                <a href="{{rss-uri}}" title="RSS feed">
+                    <img src="{{blog-prefix}}/icons/rss-color.svg" height="64" alt="Orange RSS logo">
+                </a>
+            </div>
+        </nav>
+
+        <main>
+            <article>
+                {% block content %}
+                {% endblock %}
+            </article>
+
+            {% block after-content %}
+            {% endblock %}
+        </main>
+
+        <footer class="text-center text-grey">
+            <ul class="footer-links row">
+                {% for link in footer-links %}
+                <li class="col is-center is-marginless">
+                    <a {% if link.rel %}rel="{{link.rel}}"{% endif %}
+                       {% if link.title %}title="{{link.title}}"{% endif %}
+                       href="{{link.uri}}"
+                       class="button clear icon">
+                        <img alt="" aria-hidden="true" src="{{blog-prefix}}/{{link.icon}}" height="18" class="adjust-for-dark">
+                        <span class="icon-link-text">
+                            {{link.text}}
+                        </span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <details id="license-details">
+                <summary>Licensing & Attribution</summary>
+                <dl class="text-left card">
+                    <dt>Content</dt>
+                    <dd>Copyright © {{today|date:yyyy}} {{author}}. {% if content-license %}Licensed under <a href="{{content-license.uri}}">{{content-license.name}}</a>{% else %}All rights reserved{% endif %}.</dd>
+
+                    <dt>Code</dt>
+                    <dd>
+                        <ul>
+                            <li><a href="https://codeberg.org/johnnyjayjay/cryogen-chota">cryogen-chota</a>:  Copyright © 2023 JohnnyJayJay. Licensed under an <a href="https://codeberg.org/johnnyjayjay/cryogen-theme-chota/src/branch/main/LICENSE">MIT</a> license.</li>
+                            <li><a href="https://github.com/jenil/chota">chota</a>: Copyright © 2017 Jenil Gogari. Licensed under an <a href="https://github.com/jenil/chota/blob/v0.9.2/LICENSE">MIT</a> license.</li>
+                            <li><a href="https://github.com/highlightjs/highlight.js">highlight.js</a>: Copyright © 2006 Ivan Sagalaev. Licensed under a <a href="https://github.com/highlightjs/highlight.js/blob/main/LICENSE">BSD-3-Clause</a> license.</li>
+                        </ul>
+                    </dd>
+
+                    <dt>Brand Icons</dt>
+                    <dd>RSS icon taken from <a href="https://simpleicons.org">Simple Icons</a>.</dd>
+
+                    <dt>Other Icons</dt>
+                    <dd>"chevron-left" and "chevron-right" icons: Copyright © <a href="http://www.danielbruce.se/">Daniel Bruce</a>. Licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</dd>
+
+                    <dt>Generator</dt>
+                    <dd>Site generation powered by <a href="http://cryogenweb.org">Cryogen</a>.</dd>
+                </dl>
+            </details>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+        {% if post.klipse %} {{post.klipse|safe}} {% endif %}
+        {% if page.klipse %} {{page.klipse|safe}} {% endif %}
+
+    </body>
+
+</html>

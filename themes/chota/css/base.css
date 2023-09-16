@@ -1,0 +1,176 @@
+@import chota.min.css;
+
+:root {
+    --font-size: 2rem;
+    --font-color: #040705;
+    --bg-color: #e4f1eb;
+    --color-primary: #427b62;
+}
+
+@media (prefers-color-scheme: dark) {
+
+    body {
+        --font-color: #e4f1eb;
+        --bg-color: #09100c;
+        --color-primary: #76bf9f;
+        --bg-secondary-color: #131316;
+        /* Invert the direction of the grey scale for dark mode */
+        --color-grey: #878787;
+        --color-darkGrey: #ccc;
+        --color-lightGrey: #545454;
+    }
+
+    /* Adjust this if you change your primary color for dark mode: https://codepen.io/sosuke/pen/Pjoqqp */
+    .adjust-for-dark {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(228deg) brightness(101%) contrast(102%);
+    }
+
+}
+
+a {
+    text-decoration: underline;
+}
+
+code {
+    font-size: 0.8em;
+}
+
+.text-sm {
+    font-size: 0.9em;
+}
+
+nav {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+/* Bit of a workaround: chota tabs are too small for my taste on big screens,
+   but resizing them in all cases messes up small screens. */
+@media screen and (min-width:480px) {
+    nav .tabs {
+        font-size: 1.4em;
+    }
+}
+
+.brand {
+    font-weight: bold;
+}
+
+/* Mod to have a two-line site title */
+a.title-grid {
+    display: grid;
+    grid-template-columns: 7em;
+    grid-template-rows: 2.5em 1.5em;
+    gap: 0px;
+}
+
+
+.title-name {
+    grid-row-start: 2;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.title-code {
+    grid-row-start: 1;
+    font-family: monospace;
+    font-size: 2.5em;
+}
+/* ------------------------- */
+
+.preview {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+h1.article-headline {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.article-summary {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: var(--color-grey);
+    margin-bottom: 0.8em;
+}
+
+article {
+    margin-bottom: 1.5em;
+}
+
+ul.tag-list a {
+    text-decoration: none;
+}
+
+ul.tag-list {
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 0.5em;
+    margin-left: 0.3em;
+    display: inline;
+}
+
+ul.tag-list > li {
+    display: inline;
+    margin-left: 0.15em;
+    margin-right: 0.15em;
+}
+
+footer {
+    font-size: 0.87em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
+    border-top: 3px solid var(--color-grey)
+}
+
+ul.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer a.button {
+    font-size: 1em;
+}
+
+.icon-link-text {
+    margin-left: 10px;
+}
+
+#license-details summary {
+    margin-top: 0.4em;
+    cursor: pointer;
+}
+
+#license-details dl {
+    margin-top: 0.2em;
+}
+
+/* This only has effect if you mod cryogen to generate <a class="anchor" ...> tags inside headings */
+.anchor-headings h1:hover a.anchor,
+.anchor-headings h2:hover a.anchor,
+.anchor-headings h3:hover a.anchor,
+.anchor-headings h4:hover a.anchor,
+.anchor-headings h5:hover a.anchor,
+.anchor-headings h6:hover a.anchor {
+    visibility: visible;
+}
+
+.anchor-headings h1 a.anchor,
+.anchor-headings h2 a.anchor,
+.anchor-headings h3 a.anchor,
+.anchor-headings h4 a.anchor,
+.anchor-headings h5 a.anchor,
+.anchor-headings h6 a.anchor {
+    font-size: .8em;
+    color: var(--color-darkGrey);
+    font-weight: normal;
+    margin-left: -1.8ex;
+    padding-top: 0.2em;
+    position: absolute;
+    visibility: hidden;
+    width: 2ex;
+    text-decoration: none;
+}

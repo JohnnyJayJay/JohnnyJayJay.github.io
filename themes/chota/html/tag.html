@@ -1,0 +1,14 @@
+{% extends "/html/base.html" %}
+{% block subtitle %}Posts Tagged "{{name}}"{% endblock %}
+{% block content %}
+<div>
+    <h1 class="no-anchor">Posts Tagged "{{name}}"</h1>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <a href="{{post.uri}}">{{post.title}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

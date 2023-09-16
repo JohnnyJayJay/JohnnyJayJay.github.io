@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col is-left">
+        {% if prev-uri %}
+        <a class="button clear icon" href="{{prev-uri}}">
+            <img src="{{blog-prefix}}/icons/chevron-left.svg" class="adjust-for-dark" alt="arrow left icon">
+            {{prev-title}}
+        </a>
+        {% endif %}
+    </div>
+
+    <div class="col is-right">
+        {% if next-uri %}
+        <a class="button clear icon" href="{{next-uri}}">
+            {{next-title}}
+            <img src="{{blog-prefix}}/icons/chevron-right.svg" class="adjust-for-dark" alt="arrow right icon">
+        </a>
+        {% endif %}
+    </div>
+</div>

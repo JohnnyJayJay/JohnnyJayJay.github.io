@@ -1,0 +1,20 @@
+{% extends "/html/base.html" %}
+
+{% block subtitle %}Home{% endblock %}
+
+{% block content %}
+{% for post in posts %}
+<div class="card preview">
+    {% include "/html/post-date.html" %}
+    <header><h2 class="no-anchor">{{post.title}}</h2></header>
+    {{post.content|safe}}
+    <a class="button primary outline" href="{{post.uri}}">Continue reading ➡</a>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block after-content %}
+{% with prev-title="Newer Posts" next-title="Older Posts" %}
+{% include "/html/prev-next.html" %}
+{% endwith %}
+{% endblock %}

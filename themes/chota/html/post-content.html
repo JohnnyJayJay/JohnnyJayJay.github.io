@@ -1,0 +1,21 @@
+{% include "/html/post-date.html" %}
+
+<h1 class="article-headline">{{post.title}}</h1>
+
+<div class="article-summary">{{post.description}}</div>
+
+<section class="anchor-headings" aria-label="Article body">
+    {% if post.toc %}{{post.toc|safe}}{% endif %}
+    {{post.content|safe}}
+</section>
+
+{% if post.tags|not-empty %}
+<div class="text-grey text-sm">
+    Tags:
+    <ul class="tag-list">
+        {% for tag in post.tags %}
+        <li><a href="{{tag.uri}}" class="tag is-small">{{tag.name}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
