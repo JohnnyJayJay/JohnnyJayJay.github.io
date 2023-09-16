@@ -1,0 +1,3 @@
+[submodule "themes/chota"]
+	path = themes/chota
+	url = https://codeberg.org/johnnyjayjay/cryogen-chota.git

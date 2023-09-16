@@ -9,7 +9,7 @@
  :tag-root-uri                 "tags"
  :author-root-uri              "authors"
  :public-dest                  "public"
- :blog-prefix                  "/"
+ :blog-prefix                  ""
  :rss-name                     "feed.xml"
  :rss-filters                  ["programming"]
  :recent-posts                 3
@@ -17,14 +17,34 @@
  :archive-group-format         "yyyy MMMM"
  :sass-src                     []
  :sass-path                    "node_modules/sass/sass.js"
- :theme                        "lotus"
+ :theme                        "chota"
+ :title-code "𝔽/𝕩"
+ :footer-links [{:uri "https://github.com/JohnnyJayJay/JohnnyJayJay.github.io"
+                 :icon "img/github.svg"
+                 :text "View blog source"}
+                {:uri "https://matrix.to/#/@johnny:yatrix.org"
+                 :icon "img/matrix.svg"
+                 :text "Contact me on Matrix"
+                 :title "@johnny:yatrix.org"}
+                {:uri "https://chaos.social/@johnny"
+                 :icon "img/mastodon.svg"
+                 :text "Follow me on Mastodon"
+                 :rel "me"
+                 :title "@johnny@chaos.social"}
+                {:uri "https://ko-fi.com/johnnyjayjay"
+                 :icon "img/kofi.svg"
+                 :text "Buy me a coffee"}]
+
+ :content-license {:name "CC BY-SA 4.0"
+                   :uri "https://creativecommons.org/licenses/by-sa/4.0/"}
+
  :resources                    ["img" "icons"]
- :disqus?                      true
+ :disqus?                      false
  :disqus-shortname             "leftfold"
  :ignored-files                [#"\.#.*" #".*\.swp$"]
  :previews?                    true
  :posts-per-page               5
- :blocks-per-preview           2
+ :blocks-per-preview           1
  :clean-urls                   :trailing-slash
  :collapse-subdirs?            false
  :hide-future-posts?           true
