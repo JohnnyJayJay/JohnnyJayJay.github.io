@@ -166,10 +166,10 @@ footer a.button {
     font-size: .8em;
     color: var(--color-darkGrey);
     font-weight: normal;
-    margin-left: -1.8ex;
-    padding-top: 0.2em;
+    margin-left: -2.3ex;
+    padding-top: 0.35em;
     position: absolute;
     visibility: hidden;
-    width: 2ex;
+    width: 2.6ex;
     text-decoration: none;
 }
