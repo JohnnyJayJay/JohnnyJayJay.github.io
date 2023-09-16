@@ -1,7 +1,6 @@
 @import chota.min.css;
 
 :root {
-    --font-size: 2rem;
     --font-color: #040705;
     --bg-color: #e4f1eb;
     --color-primary: #427b62;
@@ -48,7 +47,7 @@ nav {
    but resizing them in all cases messes up small screens. */
 @media screen and (min-width:480px) {
     nav .tabs {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 }
 
