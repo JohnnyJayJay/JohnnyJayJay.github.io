@@ -2,7 +2,7 @@
 
 This is the source code for my personal [blog](https://leftfold.tech). It is generated using [cryogen](http://cryogenweb.org/).
 
-I'm currently working on creating a custom, personal theme. Right now, the blog is using the [Lotus](./themes/lotus) theme.
+The blog is using a theme I rolled myself called *chota* (after the [CSS library](https://jenil.github.io/chota/) powering it) and it can be found with more information in [its own repository](https://codeberg.org/johnnyjayjay/cryogen-chota).
 
 ## Licensing
 
