@@ -20,19 +20,19 @@
  :theme                        "chota"
  :title-code "𝔽/𝕩"
  :footer-links [{:uri "https://github.com/JohnnyJayJay/JohnnyJayJay.github.io"
-                 :icon "img/github.svg"
+                 :icon "icons/github.svg"
                  :text "View blog source"}
                 {:uri "https://matrix.to/#/@johnny:yatrix.org"
-                 :icon "img/matrix.svg"
+                 :icon "icons/matrix.svg"
                  :text "Contact me on Matrix"
                  :title "@johnny:yatrix.org"}
                 {:uri "https://chaos.social/@johnny"
-                 :icon "img/mastodon.svg"
+                 :icon "icons/mastodon.svg"
                  :text "Follow me on Mastodon"
                  :rel "me"
                  :title "@johnny@chaos.social"}
                 {:uri "https://ko-fi.com/johnnyjayjay"
-                 :icon "img/kofi.svg"
+                 :icon "icons/kofi.svg"
                  :text "Buy me a coffee"}]
 
  :content-license {:name "CC BY-SA 4.0"
