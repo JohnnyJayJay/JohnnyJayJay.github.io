@@ -8,19 +8,19 @@
    [ring.server.standalone :as ring-server]
    [cryogen-core.watcher :refer [start-watcher! start-watcher-for-changes!]]
    [cryogen-core.plugins :refer [load-plugins]]
-   [cryogen-core.compiler :refer [compile-assets-timed]]
    [cryogen-core.config :refer [resolve-config]]
-   [cryogen-core.io :refer [path]]))
+   [cryogen-core.io :refer [path]]
+   [cryogen.core :refer [compile-site]]))
 
 (defn init [fast?]
   (println "Init: fast compile enabled = " (boolean fast?))
   (load-plugins)
-  (compile-assets-timed)
+  (compile-site)
   (let [ignored-files (-> (resolve-config) :ignored-files)]
     (run!
       #(if fast?
-         (start-watcher-for-changes! % ignored-files compile-assets-timed {})
-         (start-watcher! % ignored-files compile-assets-timed))
+         (start-watcher-for-changes! % ignored-files compile-site {})
+         (start-watcher! % ignored-files compile-site))
       ["content" "themes"])))
 
 (defn wrap-subdirectories
