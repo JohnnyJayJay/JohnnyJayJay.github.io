@@ -8,6 +8,10 @@
  :aliases {;; Run with `clojure -M:build`
            :build {:main-opts ["-m" "cryogen.core"]
                    :jvm-opts ["-Dpolyglot.engine.WarnInterpreterOnly=false"]}
+           :openring {:exec-fn cryogen.openring/generate-webring!
+                      :exec-args {:source-file "../webring-sources.txt"
+                                  :template-file "themes/chota/html/openring-template.html"
+                                  :output-file "themes/chota/html/webring.html"}}
            ;; Start a server serving the blog: `clojure -X:serve`
            ;; (requires tools-deps 0.9.745+)
            :serve {:exec-fn   cryogen.server/serve

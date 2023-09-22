@@ -20,13 +20,18 @@
 {% endblock %}
 
 {% block after-content %}
-<!-- TODO: include comment component here -->
 {% with prev-title=post.prev.title prev-uri=post.prev.uri next-title=post.next.title next-uri=post.next.uri %}
 {% include "/html/prev-next.html" %}
 {% endwith %}
+
 {% if post.comments %}
 {% with comments=post.comments %}
 {% include "/html/comments.html" %}
 {% endwith %}
 {% endif %}
+
+{% if openring? %}
+{% include "/html/webring.html" %}
+{% endif %}
+
 {% endblock %}

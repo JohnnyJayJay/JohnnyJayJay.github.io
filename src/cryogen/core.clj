@@ -1,8 +1,11 @@
 (ns cryogen.core
-  (:require [cryogen-core.compiler :refer [compile-assets-timed]]
-            [cryogen-core.plugins :refer [load-plugins]]
-            [cryogen.autolink :as al]
-            [cryogen.highlight :as hl]))
+  (:require
+   [clojure.edn :as edn]
+   [cryogen-core.compiler :refer [compile-assets-timed]]
+   [cryogen-core.plugins :refer [load-plugins]]
+   [cryogen.autolink :as al]
+   [cryogen.highlight :as hl]
+   [cryogen.openring :as or]))
 
 (defn compile-site []
   (compile-assets-timed

@@ -51,6 +51,10 @@ nav {
     }
 }
 
+.separated {
+    border-top: 2px solid var(--color-grey);
+}
+
 /* Mod to have a two-line site title */
 a.title-grid {
     display: grid;

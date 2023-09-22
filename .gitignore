@@ -16,3 +16,5 @@ pom.xml.asc
 node_modules/
 .clj-kondo/.cache
 .lsp
+.nrepl-port
+themes/chota/html/webring.html
