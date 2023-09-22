@@ -32,8 +32,8 @@ jobs:
       - name: Setup golang
         uses: actions/setup-go@v4
         with:
-          go-version: '1.20.8'
-        working-directory: ${{ github.workspace }}/openring
+          go-version-file: openring/go.mod
+          cache-dependency-path: openring/go.sum
       - uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
