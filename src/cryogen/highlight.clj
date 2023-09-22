@@ -70,7 +70,7 @@
        (if (and language-class (not (str/includes? language-class "nohighlight")))
          (-> selected-node
              (update :content (comp enlive/html-snippet (partial highlight-code language-class) first))
-             (update-in [:attrs :class] str " hljs"))
+             (update-in [:attrs :class] str " hljs language-" language-class))
          selected-node)))))
 
 (defn highlight-code-in-article
