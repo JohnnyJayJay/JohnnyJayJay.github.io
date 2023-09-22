@@ -1,0 +1,87 @@
+/*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: Carl Schwan
+ * SPDX-FileCopyrightText: JohnnyJayJay
+ */
+.comment-level {
+	max-width: 3rem;
+	min-width: 3rem;
+}
+.reply-original {
+	display: none;
+}
+
+#mastodon-comments-list {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.mastodon-comment {
+	margin-bottom: 2rem;
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+	flex-grow: 2;
+}
+.mastodon-comment .comment {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	flex-wrap: true;
+}
+.mastodon-comment .comment-avatar img {
+	width: 6rem;
+}
+.mastodon-comment .content {
+	flex-grow: 2;
+}
+.mastodon-comment .comment-author {
+	display: flex;
+	flex-direction: column;
+}
+.mastodon-comment .comment-author-name {
+	font-weight: bold;
+}
+.mastodon-comment .comment-author-name a {
+	display: flex;
+	align-items: center;
+    text-decoration: none;
+}
+
+.mastodon-comment .comment-author-reply a {
+    text-decoration: none;
+}
+
+.mastodon-comment .comment-author-date {
+	margin-left: auto;
+}
+
+.mastodon-comment .comment-author-date a {
+	text-decoration: none;
+}
+.mastodon-comment .disabled {
+	color: var(--accent-color);
+}
+.mastodon-comment-content p:first-child {
+	margin-top: 0;
+}
+
+#comment-button {
+    z-index: 1;
+    margin-bottom: 1.2em;
+}
+
+#comment-button[open] {
+    margin-bottom: 9em;
+}
+
+::placeholder {
+    color: var(--lightGrey);
+    /* opacity: 1; */
+}
+
+
+::-ms-input-placeholder { /* Edge 12 -18 */
+    color: var(--lightGrey);
+}

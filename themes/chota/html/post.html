@@ -1,6 +1,9 @@
 {% extends "/html/base.html" %}
 {% block subtitle %}{{post.title}}{% endblock %}
 {% block meta %}
+{% if post.comments %}
+{% style "css/comments.css" %}
+{% endif %}
 <meta name="keywords" content="{% for tag in tags %}{{tag.name}}{% if not forloop.last %},{% endif %}{% endfor %}" />
 {% if post.description %}
 <meta name="description" content="{{post.description}}" />
@@ -21,4 +24,9 @@
 {% with prev-title=post.prev.title prev-uri=post.prev.uri next-title=post.next.title next-uri=post.next.uri %}
 {% include "/html/prev-next.html" %}
 {% endwith %}
+{% if post.comments %}
+{% with comments=post.comments %}
+{% include "/html/comments.html" %}
+{% endwith %}
+{% endif %}
 {% endblock %}

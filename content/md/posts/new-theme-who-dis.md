@@ -2,6 +2,7 @@
  :description "I redesigned this blog and tried to not make it suck"
  :date "2023-09-18"
  :layout :post
+ :comments {:instance "chaos.social", :author "johnny", :id "111085941141595246"}
  :tags ["meta" "web"]}
  
 I am not a web designer. In fact, I'm usually pretty bad at creating any sort of visual design. And that's fine, I think. There's always something that you're not good at or that you don't enjoy, and it's not a big deal because there are plenty of other people who *are* good at it. Still, something about the fact that I never really made a decent-looking website myself didn't sit right with me. So I figured I'd take it upon myself to redesign this blog and try to get out of my comfort zone.

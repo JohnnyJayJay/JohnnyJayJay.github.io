@@ -3,7 +3,7 @@
 :root {
     --font-color: #040705;
     --bg-color: #e4f1eb;
-    --color-primary: #427b62;
+    --color-primary: #317054;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,10 +49,6 @@ nav {
     nav .tabs {
         font-size: 1.2em;
     }
-}
-
-.brand {
-    font-weight: bold;
 }
 
 /* Mod to have a two-line site title */
@@ -118,7 +114,7 @@ ul.tag-list > li {
 
 footer {
     font-size: 0.87em;
-    margin-top: 0.5em;
+    margin-top: 1em;
     margin-bottom: 1em;
     padding-top: 0.5em;
     border-top: 3px solid var(--color-grey)
@@ -138,7 +134,7 @@ footer a.button {
     margin-left: 10px;
 }
 
-#license-details summary {
+details summary {
     margin-top: 0.4em;
     cursor: pointer;
 }
@@ -166,10 +162,10 @@ footer a.button {
     font-size: .8em;
     color: var(--color-darkGrey);
     font-weight: normal;
-    margin-left: -2.3ex;
-    padding-top: 0.35em;
+    margin-left: -2.1ex;
+    padding-top: 0.2em;
     position: absolute;
     visibility: hidden;
-    width: 2.6ex;
+    width: 2.4ex;
     text-decoration: none;
 }

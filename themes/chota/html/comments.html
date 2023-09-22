@@ -1,0 +1,27 @@
+<section>
+    <h2>Comments</h2>
+
+    <div id="comment-ui" data-post-instance="{{ comments.instance }}" data-post-author="{{ comments.author }}" data-post-id="{{ comments.id }}">
+        <p>
+            Comments for this post are available on <a href="https://{{ comments.instance }}/@{{ comments.author }}/{{ comments.id }}">{{ comments.instance }}</a>.
+            If you have an account somewhere on the <a href="https://fediverse.info">Fediverse</a> (e.g. on a Mastodon, Misskey, Peertube or Pixelfed instance), you can use it to add a comment yourself.
+        </p>
+
+        <p id="comment-load-info">
+            <noscript>Embedded comments are not available without JavaScript. However, you can still:</noscript>
+        </p>
+
+        <details id="comment-button" class="dropdown">
+            <summary class="button primary">Comment on this post</summary>
+            <div id="comment-dropdown" class="card">
+                <p>Copy the URL below and paste it in your <br> instance's search bar to comment on this post.</p>
+                <form id="comment-form" class="row">
+                    <input id="fedi-url-field" readonly="true" class="col" type="text" value="https://{{ comments.instance }}/@{{ comments.author }}/{{ comments.id }}">
+                </form>
+            </div>
+        </details>
+    </div>
+
+    {% script "js/purify.min.js" %}
+    {% script "js/comments.js" %}
+</section>
