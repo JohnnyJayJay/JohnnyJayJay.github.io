@@ -18,6 +18,7 @@
  :sass-src                     []
  :sass-path                    "node_modules/sass/sass.js"
  :theme                        "chota"
+ :disable-hljs? true
  :title-code "𝔽/𝕩"
  :footer-links [{:uri "https://github.com/JohnnyJayJay/JohnnyJayJay.github.io"
                  :icon "icons/github.svg"
