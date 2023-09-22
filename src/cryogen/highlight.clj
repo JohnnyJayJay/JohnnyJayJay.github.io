@@ -66,14 +66,12 @@
    dom
    [:code]
    (fn [selected-node]
-     (update
-      selected-node
-      :content
-      (fn [[content]]
-        (let [language-class (get-in selected-node [:attrs :class])]
-          (if (and language-class (not (str/includes? language-class "nohighlight")))
-            (enlive/html-snippet (highlight-code language-class content))
-            content)))))))
+     (let [language-class (get-in selected-node [:attrs :class])]
+       (if (and language-class (not (str/includes? language-class "nohighlight")))
+         (-> selected-node
+             (update :content (comp enlive/html-snippet (partial highlight-code language-class) first))
+             (update-in [:attrs :class] str " hljs"))
+         selected-node)))))
 
 (defn highlight-code-in-article
   "Function that can be passed as :update-article-fn and that updates the content-dom of an article to apply highlighting."
