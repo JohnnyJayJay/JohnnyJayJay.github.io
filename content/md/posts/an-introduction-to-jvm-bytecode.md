@@ -90,7 +90,7 @@ Raw bytecode. Not of any educational use.
 As I already mentioned, we can use `javap` to look at `.class` files.  
 To achieve this, we simply need to run `javap` in a terminal of our choice and provide a class name as the first argument. We get the following result for `javap SimpleAlgorithm`:
 
-```
+```plaintext
 Compiled from "SimpleAlgorithm.java"  
 public final class SimpleAlgorithm {  
   public SimpleAlgorithm();  
@@ -103,7 +103,7 @@ Now, this isn’t really helpful yet; we only get to see what’s exposed to the
 We want to see the contents of these methods. To do this, we can simply add the `-c` flag to our command, which will tell `javap` to disassemble the instructions. To view [the whole class file](https://docs.oracle.com/javase/specs/jvms/se11/html/jvms-4.html), use `-v` instead.  
 We are going to focus on the output of `javap -c SimpleAlgorithm` and `javap -c DivisorPrinter` respectively for now.
 
-```
+```plaintext
 Compiled from "SimpleAlgorithm.java"  
 public final class SimpleAlgorithm {  
   public SimpleAlgorithm();  
@@ -159,7 +159,7 @@ Although this is very efficient, it’s not really convenient. You always have t
 Take this line of code for example: `Math.max(1, 2);`.  
 After compilation (within a [static initialiser](https://docs.oracle.com/javase/tutorial/java/javaOO/initial.html) of a class), it looks like this:
 
-```
+```plaintext
 4: iconst_1  
 5: iconst_2  
 6: invokestatic  #2                  // Method java/lang/Math.max:(II)I  
@@ -225,7 +225,7 @@ Arrays in Java are special, because they are, along with the primitive types, re
 
 At first glance, the instructions used to create objects (like `DivisorPrinter` in our example) might look a bit weird:
 
-```
+```plaintext
 22: new           #4                  // class DivisorPrinter  
 25: dup  
 26: iload_2  
@@ -247,7 +247,7 @@ Now, why is that necessary? After `dup`, there is an `iload_2`, which pushes the
 
 Let’s focus on `DivisorPrinter` now. When we disassemble it using `javap -c DivisorPrinter`, we get the following output:
 
-```
+```plaintext
 Compiled from "DivisorPrinter.java"  
 public final class DivisorPrinter {  
   public DivisorPrinter(int);  
@@ -302,7 +302,7 @@ Let’s look at `7: if_icmpgt 48`. What does it mean? `icmpgt` stands for “int
 
 In the loop, there is a second control flow element - an if statement checking whether `i` divides `number`. In the bytecode, it looks like this:
 
-```
+```plaintext
 11: getfield      #2                  // Field number:I  
 14: iload_1  
 15: irem  
