@@ -14,3 +14,5 @@ pom.xml.asc
 /themes/lotus/css/blog.css.map
 .cpcache/
 node_modules/
+.clj-kondo/.cache
+.lsp

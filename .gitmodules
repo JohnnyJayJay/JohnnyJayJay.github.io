@@ -1,0 +1,3 @@
+[submodule "openring"]
+	path = openring
+	url = https://git.sr.ht/~sircmpwn/openring
