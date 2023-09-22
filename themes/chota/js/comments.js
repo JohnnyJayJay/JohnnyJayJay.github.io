@@ -101,6 +101,8 @@ loadButton.addEventListener("click", function() {
             reply.account.display_name = reply.account.display_name.replace(`:${emoji.shortcode}:`,
                                                                             `<img src="${escapeHtml(emoji.static_url)}" alt="Emoji ${emoji.shortcode}" height="20" width="20" />`);
           });
+          const attCount = reply.media_attachments.length;
+          const attNotice = attCount > 0 ? `<p><a href="${reply.url}">${attCount} attachment${attCount > 1 ? "s" : ""}</a></p>` : '';
           mastodonComment =
             `
 <li class="mastodon-wrapper card">
@@ -116,7 +118,7 @@ loadButton.addEventListener("click", function() {
       </div>
       <time datetime="${reply.created_date.toISOString()}" class="comment-author-date"><a href="${reply.url}" rel="nofollow">${reply.created_date.toLocaleString(navigator.language, dateOptions)}</a></time>
     </div>
-    <div class="comment-content">${reply.content}</div>
+    <div class="comment-content">${reply.content}${attNotice}</div>
   </div>
 </li>
                                          `;
