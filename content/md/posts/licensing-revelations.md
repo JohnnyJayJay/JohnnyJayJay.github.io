@@ -2,7 +2,8 @@
  :description "You're probably doing it wrong somehow."
  :date "2023-06-21"
  :layout :post
- :tags ["licensing" "clojure" "spigot"]}
+ :tags ["licensing" "clojure" "spigot"]
+ :comments {:instance "chaos.social" :author "johnny" :id "110582723242784973"}}
  
  A while back (my god, has it really been two and a half years? 😟), I wrote an [article](https://leftfold.tech/blog/posts/adopting-clojure-in-a-hostile-environment/) about writing [Spigot](https://www.spigotmc.org/wiki/about-spigot/) plugins in [Clojure](https://clojure.org). In that post, I presented what could be considered a proof of concept for how you can approach this unusual combination.
 

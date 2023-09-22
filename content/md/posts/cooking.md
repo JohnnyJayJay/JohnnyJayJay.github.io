@@ -3,7 +3,8 @@
  :date "2023-04-22"
  :layout :post
  :tags ["life" "food"]
- :toc true}
+ :toc true
+ :comments {:instance "chaos.social" :author "johnny" :id "110242149629211027"}}
 
 After graduating the German equivalent of high school at the beginning of summer 2020, I immediately made plans to start studying computer science that same year, far away from home. Up to this point, I had spent my entire life living with my parents in one city. Now, all of a sudden, I would have to figure out how to live on my own, in a city I did not know, all at the height of the COVID pandemic. I'm sure many people can relate when I talk about how overwhelming this step can be and how the uncertainty of it all can cause a lot of anxiety.
 
