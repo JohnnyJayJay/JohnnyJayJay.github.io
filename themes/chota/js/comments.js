@@ -112,7 +112,7 @@ loadButton.addEventListener("click", function() {
       <div class="comment-avatar"><img src="${escapeHtml(reply.account.avatar_static)}" alt=""></div>
       <div class="comment-author">
         <div class="comment-author-name"><a href="${reply.account.url}" rel="nofollow">${reply.account.display_name}</a></div>
-        <div class="comment-author-reply"><a href="${reply.account.url}" rel="nofollow">${escapeHtml(reply.account.acct)}</a></div>
+        <div class="comment-author-reply"><a href="${reply.account.url}" rel="nofollow">${escapeHtml(reply.account.acct)}</a>${reply.account.acct == author ? ' [OP]' : ""}</div>
       </div>
       <time datetime="${reply.created_date.toISOString()}" class="comment-author-date"><a href="${reply.url}" rel="nofollow">${reply.created_date.toLocaleString(navigator.language, dateOptions)}</a></time>
     </div>
