@@ -61,3 +61,5 @@ I'm not entirely done working on this theme, I have a couple more ideas that I w
 - Similar to the previous feature, I've seen the concept of ["inverse anti ad-blocking"](https://stefanbohacek.com/project/detect-missing-adblocker-wordpress-plugin/#resources) banners, i.e. banners that complain if you *don't* have an ad blocker. I find the idea pretty funny at least and perhaps even genuinely useful. 
 
 From this list, the Fediverse comment integration definitely has the highest priority. But until that's added, feel free to head over to the [chota theme's repository](https://codeberg.org/johnnyjayjay/cryogen-chota), try it out yourself if you use cryogen, and send me feedback about the state of this blog. Thanks!
+
+**Update 22/09/23**: The Fediverse comment integration is done! Also, syntax highlighting works without JavaScript in the browser now - I wrote a [cryogen extension](https://gist.github.com/JohnnyJayJay/861cd1db0a66adf83fdf8fffa37d8808) for it. 
