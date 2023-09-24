@@ -48,7 +48,7 @@ public class Main {
 }
 ```
 
-As it turns out, the method that gets called here – `buffer.position(0)` – changes from JDK 12 to JDK 13.\ 
+As it turns out, the method that gets called here – `buffer.position(0)` – changes from JDK 12 to JDK 13.<br>
 Before the change, there was a method `position(int)` on the class `Buffer` that returned `Buffer`. After the change, that method still existed, however a *highly complex override* was added to `ByteBuffer`:
 
 ```java
@@ -96,7 +96,7 @@ Compiling with toolchain '/home/johnny/.sdkman/candidates/java/17.0.8-tem'.
 Compiling with JDK Java compiler API.
 ```
 
-For some reason, Gradle [seems to have been removed](https://stackoverflow.com/questions/16679593/gradle-compilejava-task-warning-options-bootstrap-class-path-not-set-in-conju) this log message at some point. 
+For some reason, Gradle [seems to have removed](https://stackoverflow.com/questions/16679593/gradle-compilejava-task-warning-options-bootstrap-class-path-not-set-in-conju) this log message at some point. 
 
 But OK, clearly, I should have known about the bootstrap classpath. So I wondered: why have I never seen it used in the wild? Maybe it's because it's kind of a [pain in the ass](https://stackoverflow.com/questions/22681544/how-to-set-gradle-options-bootclasspath-in-an-os-independent-manner) to set up in a platform-agnostic way since you have to make assumptions about the user's system – they need to have the JDK in question installed, you need to know its location and you have to figure out *what parts of it* need to be added to the classpath.
 
