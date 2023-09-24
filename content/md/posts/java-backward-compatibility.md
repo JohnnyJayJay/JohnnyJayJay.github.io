@@ -102,7 +102,7 @@ But OK, clearly, I should have known about the bootstrap classpath. So I wondere
 
 Fortunately, Gradle 6.7 [added](https://docs.gradle.org/6.7/release-notes.html#new-jvm-ecosystem-features) support for ["toolchains"](https://docs.gradle.org/current/userguide/toolchains.html), a way to remove the pain from `javac`'s compatibilty options (and what I should have used from from the get-go). Here's what that looks like:
 
-```kotlin
+```gradle
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(8))
