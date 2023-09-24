@@ -2,7 +2,8 @@
  :description "javac links in mysterious ways"
  :date "2023-09-24"
  :layout :post
- :tags ["java" "jvm"]}
+ :tags ["java" "jvm"]
+ :comments {:instance "chaos.social" :author "johnny" :id "111119455462737605"}}
 
 Last year, I wrote a [library for WebAuthn authenticator emulation](https://github.com/adessoSE/softauthn) in Java. I did my usual Gradle setup for Java libraries: adding the `java-library` plugin and explicitly setting `sourceCompatibility` and `targetCompatibility` to make sure that I don't accidentally make my releases incompatible with the version that I want to target. In this case, Java 8 (Java enthusiasts, I'll give you a second to let out the sigh). Easy, right?
 
