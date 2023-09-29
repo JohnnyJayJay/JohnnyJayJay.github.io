@@ -40,7 +40,7 @@
  :content-license {:name "CC BY-SA 4.0"
                    :uri "https://creativecommons.org/licenses/by-sa/4.0/"}
 
- :resources                    ["img" "icons" "key.asc"]
+ :resources                    ["img" "icons" "key.asc" "robots.txt"]
  :disqus?                      false
  :disqus-shortname             "leftfold"
  :ignored-files                [#"\.#.*" #".*\.swp$"]
