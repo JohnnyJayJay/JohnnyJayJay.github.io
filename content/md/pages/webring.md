@@ -11,5 +11,5 @@ For some reason, I really like this concept. It evokes a sort of nostalgia in me
 
 This blog is part of the [hotline webring](https://hotlinewebring.club/). To explore, follow the links at the bottom of the [home page](/).
 
-Under every post, there are also some links to posts from a personally curated list of blogs. The selection is regenerated every night using [openring](https://git.sr.ht/~sircmpwn/openring). 
+Under every post, there are also some links to posts from a personally curated [list](https://github.com/JohnnyJayJay/JohnnyJayJay.github.io/blob/main/webring-sources.txt) of blogs. The selection is regenerated every night using [openring](https://git.sr.ht/~sircmpwn/openring). 
 
