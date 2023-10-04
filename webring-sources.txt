@@ -8,3 +8,5 @@ https://newsletter.mollywhite.net/feed
 https://popehat.substack.com/feed
 https://pluralistic.net/feed/
 https://jogblog.substack.com/feed.xml
+https://maia.crimew.gay/feed.xml
+https://ploum.net/atom.xml
