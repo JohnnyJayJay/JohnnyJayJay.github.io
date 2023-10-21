@@ -99,7 +99,7 @@ For now, try to run `/greet` in your server to verify everything worked.
 
 In `command.clj`, you can see the definition of an example command handler for the `greet` command:
 
-```clj
+```clojure
 (defhandler greet-handler
   ["greet"]
   _interaction
@@ -118,7 +118,7 @@ As you can see, you can define command handlers using `defhandler`. This is a ma
  
 A handler should return an interaction response (a Clojure map whose structure is that described in [the official documentation](https://discord.dev/interactions/receiving-and-responding#interaction-response-object-interaction-response-structure)). slash helps you by providing functions that construct compliant response objects. `(rsp/channel-message {:content "xyz"})` turns into `{:type 4 :data {:content "xyz"}}`, for example. Of course, you're not obligated to use these functions, but they make your code easier to understand and remove magic values.\
 One common addition to a regular channel message as a slash command response is to make it ephemeral, which can be done by adding a `rsp/ephemeral` call at the end:
-```clj
+```clojure
 (-> {:content (str ":wave: Hey there" (when user (str ", <@" user ">")) \!)}
     rsp/channel-message
     rsp/ephemeral)
