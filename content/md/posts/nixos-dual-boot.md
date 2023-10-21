@@ -1,8 +1,9 @@
 {:title "Distro hopping to NixOS in a dual boot system"
- :description "Ein Satz mit x: Es wurde wohl Nix."
+ :description "Ein Satz mit x: Es wurde Nix."
  :date "2023-10-21"
  :layout :post
- :tags ["nix" "nixos" "linux"]}
+ :tags ["nix" "nixos" "linux"]
+ :comments {:instance "chaos.social" :author "johnny" :id "111273212205917832"}}
 
 NixOS has been on my radar for a while. I think I first heard of it around 4 years ago as this really unconventional and unorthodox Linux distribution. I was familiar with the general idea of having an immutable system, pinning versions and all that but didn't pay it much further attention. At that time, I was still very inexperienced with Linux (I still kind of am). Somewhat recently, a lot of people in my online social circles have started using and/or promoting NixOS (or Nix in general), so I started learning more about it and getting an idea of how you actually work with it. I was surprised to see how you could model pretty much any setup in Nix and how people were using it for [literally anything](https://media.ccc.de/v/nixcon-2023-35290-nix-and-kubernetes-deployments-done-right).
 
