@@ -4,7 +4,9 @@
         compojure/compojure {:mvn/version "1.6.2"}
         cryogen-flexmark/cryogen-flexmark {:mvn/version "0.1.4"}
         cryogen-core/cryogen-core {:mvn/version "0.4.0"}
-        org.graalvm.js/js {:mvn/version "23.0.1"}}
+        org.graalvm.js/js {:mvn/version "23.0.1"}
+        hato/hato {:mvn/version "0.9.0"}
+        cheshire/cheshire {:mvn/version "5.12.0"}}
  :aliases {;; Run with `clojure -M:build`
            :build {:main-opts ["-m" "cryogen.core"]
                    :jvm-opts ["-Dpolyglot.engine.WarnInterpreterOnly=false"]}
@@ -12,6 +14,11 @@
                       :exec-args {:source-file "../webring-sources.txt"
                                   :template-file "themes/chota/html/openring-template.html"
                                   :output-file "themes/chota/html/webring.html"}}
+           :fedi-post {:exec-fn cryogen.post/fedi-post!
+                       :exec-args {:instance "chaos.social"
+                                   :lang "en"
+                                   :visibility "public"
+                                   :oauth-token-file "masto-oauth-token.gpg"}}
            ;; Start a server serving the blog: `clojure -X:serve`
            ;; (requires tools-deps 0.9.745+)
            :serve {:exec-fn   cryogen.server/serve
