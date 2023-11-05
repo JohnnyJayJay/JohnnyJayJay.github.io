@@ -28,6 +28,12 @@
         (.newLine buf-writer))
       (.flush buf-writer))))
 
+(defn process [& cmd]
+  (.. (ProcessBuilder. (vec cmd))
+      inheritIO
+      start
+      waitFor))
+
 (defn fedi-post! [{:keys [instance lang visibility post oauth-token-file]}]
   (when-not (.exists (io/file post))
     (println "Cannot find post file " (prn-str post))
@@ -35,10 +41,7 @@
 
   (let [oauth-token (sh "gpg" "--decrypt" oauth-token-file)
         masto-post-file (File/createTempFile "masto-post-" ".txt")]
-    (.. (ProcessBuilder. [(or (System/getenv "EDITOR") "nano") (.getAbsolutePath masto-post-file)])
-        inheritIO
-        start
-        waitFor)
+    (process (or (System/getenv "EDITOR") "nano") (.getAbsolutePath masto-post-file))
     (let [masto-content (slurp masto-post-file)]
       (io/delete-file masto-post-file true)
       (println "Mastodon post to create:")
@@ -48,4 +51,7 @@
       (println "Press any key to confirm.")
       (read-line)
       (let [{{:keys [id] {:keys [username]} :account} :body} (post-status! oauth-token instance lang visibility masto-content)]
-        (update-front-matter! post instance username id)))))
+        (update-front-matter! post instance username id))
+      (process "git" "add" post)
+      (process "git" "commit" "-m" (str "Add comment section to " (.getName (io/file post))))
+      (process "git" "push"))))
