@@ -5,7 +5,7 @@
  :tags ["web" "fediverse" "life" "social media"],
  :comments
  {:instance "chaos.social",
-  :username "johnny",
+  :author "johnny",
   :id "111357854680320090"}}
 
 Today marks my one-year anniversary on the Fediverse, or to be more specific, on [chaos.social](https://chaos.social), my [Mastodon](https://joinmastodon.org) server of choice. Over the last year, I have used the social network almost daily. And, to spoil my conclusion right at the start: I am going to stay.
