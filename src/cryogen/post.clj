@@ -22,7 +22,7 @@
                     pb-reader (PushbackReader. buf-reader)]
           [(edn/read pb-reader) (doall (drop 1 (line-seq buf-reader)))])]
     (with-open [buf-writer (io/writer post-file)]
-      (pprint (assoc front-matter :comments {:instance instance :username username :id id}) buf-writer)
+      (pprint (assoc front-matter :comments {:instance instance :author username :id id}) buf-writer)
       (doseq [line lines]
         (.write buf-writer line)
         (.newLine buf-writer))

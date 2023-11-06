@@ -1,8 +1,11 @@
-{:title "Why the Others Suck"
- :tags ["web" "fediverse" "social media"]
- :layout :post
- :date "2023-11-06"
- :description "Mastodon, Schmastodon – why don't we all just switch to <thing that will implode in 2 months>?"}
+{:title "Why the Others Suck",
+ :tags ["web" "fediverse" "social media"],
+ :layout :post,
+ :date "2023-11-06",
+ :description
+ "Mastodon, Schmastodon – why don't we all just switch to <thing that will implode in 2 months>?",
+ :comments
+ {:instance "chaos.social", :author "johnny", :id "111362265885954302"}}
 
 Yesterday, I published my [resumé](/posts/one-year-on-fedi) of spending a year on the [Fediverse](https://fediverse.info): what makes it unique, how it failed to reel in most Twitter users, why it changed my view on social media.
 That post was pretty abstract – I felt that the concrete challenges of the Fediverse, its current implementation and features are being sufficiently discussed elsewhere. As an addendum to yesterday's post, this one is more concrete: I'd like to share my thoughts on current "Twitter-like" social networks and the reasons why I don't use them.
