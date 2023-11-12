@@ -2,7 +2,7 @@
  :description "Statements dreamed up by the utterly deranged (combinatory logicians)"
  :layout :post
  :date "2023-11-12"
- :draft? true
+ :draft? false
  :tags ["haskell" "combinatory logic" "array programming"]}
 
 Combinatory logic is a very strange branch of computer science. It's too much on the math side to be well-known among programmers, and yet it's so stupidly simple that it would take any programmer around 5 minutes to implement the complete set of common combinators in a modern programming language of their choice, regardless of how much they know or care about the topic. Needless to say, a weird niche has formed around it.
@@ -201,11 +201,11 @@ What we see here is that the left half is used as input (<code>f<sub>1</sub></co
 
 ![](/img/combinators/compcompcomp-1.png)
 
-As you can see <code>f<sub>2</sub></code> = <code>f<sub>1</sub></code> = `f`. So the function that we give as input to the whole thing just ends up in the composition that used to be on the left. In other words: <code>f<sub>2</sub></code> = <code>f<sub>1</sub></code> = `f`. Let's remove that redundancy:
+As you can see, the function that we give as input to the whole thing just ends up in the composition that used to be on the left. In other words: <code>f<sub>2</sub></code> = `f`. Let's remove that redundancy:
 
 ![](/img/combinators/compcompcomp-2.png)
 
-A similar thing now becomes apparent for the `g`s: <code>g<sub>2</sub></code> is the result of of applying <code>g<sub>1</sub></sub></code> to `x` This means that applying <code>g<sub>2</sub></code> to `y` is the same as applying <code>g<sub>1</sub></sub></code> to `x` and the result of that to `y`. In other words: <code>g<sub>2</sub></sub> y</code> = <code>g<sub>1</sub></sub> x y</code>. Let's skip the middleman then and just give the two arguments to <code>g<sub>1</sub></sub></code> directly. And while we're at it, since there is now only a single `g` left, let's just call it `g`.
+A similar thing now becomes apparent for the `g`s: <code>g<sub>2</sub></code> is the result of of applying <code>g<sub>1</sub></sub></code> to `x`. This means that applying <code>g<sub>2</sub></code> to `y` is the same as applying <code>g<sub>1</sub></sub></code> to `x` and the result of that to `y`. In other words: <code>g<sub>2</sub></sub> y</code> = <code>g<sub>1</sub></sub> x y</code>. Let's skip the middleman then and just give the two arguments to <code>g<sub>1</sub></sub></code> directly. And while we're at it, since there is now only a single `g` left, let's just call it `g`.
 
 ![](/img/combinators/compcompcomp-3.png)
 
