@@ -94,7 +94,7 @@ f :: Int -> Int -> Int
 It also means that the previously defined combinators can be rewritten without lambdas:
 
 ```haskell
-const x y = a
+const x y = x
 id x = x
 comp f g x = f (g x)
 ```
