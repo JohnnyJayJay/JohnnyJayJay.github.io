@@ -63,7 +63,13 @@ The main answer (and this goes for combinatory logic in any language) is enablin
 +⌿ ÷ ≢
 ```
 
-These are just three functions: Sum (*plus reduce*), divide and length (*tally*). In other words, "sum divided by length", which is the definition of the average of a list of numbers. This is called a *train* in APL-style languages but is also known as the Phi (Φ) combinator. Its result applies the two outer functions to the argument and then combines them with the function in the middle. Notice how there is no mention of any parameter (point) here – point-free programming. Once you internalise this pattern of just writing three functions next to each other, it's not hard to understand anymore. 
+These are just three functions: Sum (*plus reduce*), divide and length (*tally*). In other words, "sum divided by length", which is the definition of the average of a list of numbers. This is called a *train* in APL-style languages but is also known as the Phi (Φ) combinator. Its result applies the two outer functions to the argument and then combines them with the function in the middle. Notice how there is no mention of any parameter (point) here – point-free programming. Once you internalise this pattern of just writing three functions next to each other, it's not hard to understand anymore. Just for comparison, here's the same function with the input as an explicit parameter (`ω`)[^3]:
+
+[^3]: Since APL is right-associative (implicit parentheses around everything to the right of a function), the second pair of parentheses is technically unnecessary here.
+
+```plaintext
+{(+⌿ ω) ÷ (≢ ω)}
+```
 
 ## Combinators in Haskell
 
