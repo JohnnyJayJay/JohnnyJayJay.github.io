@@ -20,19 +20,19 @@ Conceptually, combinators are generic higher-order functions (functions that can
 Confused yet? Take this example of a type signature:
 
 ```haskell
-:: a -> b -> a
+a -> b -> a
 ```
 
-This means: Take a value of type `a`, then return a function that takes values of type `b` and returns values of type `a`. `a` and `b` are type variables and could be substituted by any concrete type.
+This describes a function that takes an `a` and returns yet another function that takes a `b` and returns an `a`. `a` and `b` are type variables and could be substituted by any concrete type.
 There is only one way to write a self-contained function with this signature. It's this:
 
 ```haskell
--- for any value a, return a function that always returns a.
-const :: a -> b -> a -- signature
+const :: a -> b -> a -- type signature
 const x = \y -> x -- definition (x is a parameter, \y -> x is a lambda)
 ```
 
-Now, this combinator actually doesn't even use function application - there's no function to apply. It still meets the criteria for a combinator though. Here's an even simpler one, the identity function:
+For any value x, the `const` function gives you a function that always returns x.
+Now, this combinator actually doesn't even use function application - the one thing that is allowed in combinators – there's simply no function to apply. It still meets the criteria for a combinator though. Here's an even simpler one, the identity function:
 
 ```haskell
 id :: a -> a
@@ -76,20 +76,49 @@ These are just three functions: Sum (*plus reduce*), divide and length (*tally*)
 As I said before, it's not possible to combine combinators *using* combinators in APL, BQN and similar, i.e., there are no *meta-combinations*. This is, in some sense, a limitation. It makes perfect sense to write combinators as functions after all, as seen earlier. Here's *composition* (atop) as a Haskell function:
 
 ```haskell
--- the composition of functions f and g is a function that first applies g, then f
 comp :: (b -> c) -> (a -> b) -> a -> c
 comp f g = \x -> f (g x)
 ```
 
-I've subjected you to reading Haskell already, however there is one more important thing I left out that you need to understand before we can try to reason about what it means to combine combinators. 
+Read: the composition of functions `f` and `g` is a function that takes an argument `x` and returns `f (g x)` (`f` applied to `g` applied to `x`). Function application (commonly denoted `f(x)` in other languages) in Haskell is just written by putting the argument next to the function (`f x`). 
 
+If the type signature confuses you: It just says that:
+- `f` is a function that takes a `b` and returns a `c`
+- `g` is a function that takes an `a` and returns a `b`
+- the result is a function that takes an `a` and returns a `c`
+
+Again, this works for anything `a`, `b` and `c` may be (type variables).
+
+
+```plaintext
+   -------                             -------   
+ -/       \-                         -/       \- 
+/           \        comp f g       /           \
+|     a     +----------------------->     c     |
+\           /                       \           /
+ -\       /-                         -\       /- 
+   -------\                           /-------   
+           \                         /           
+            \                       /            
+             \                     /             
+            g \                   / f            
+               \     -------     /               
+                \  -/       \-  /                
+                 \/           \/                 
+                  |     b     |                  
+                  \           /                  
+                   -\       /-                   
+                     -------                     
+```
+
+There is one more important thing I left out that you need to understand before we can try to reason about what it means to combine combinators. 
 One of the fundamental ideas in Haskell is that functions really only have one parameter. If you want to have multiple parameters, you define a function that returns another function. In fact, when you write something like
 
 ```haskell
 f a b = a + b
 ```
 
-this happens automatically. The type signature of `f` is
+(where `a` and `b` are parameters of function `f`), this happens automatically. The type signature of `f` is
 
 ```haskell 
 f :: Int -> Int -> Int
@@ -115,7 +144,7 @@ So, we've seen the *composition* combinator that acts like a kind of pipe: apply
 bicomp f g = \x y -> f (g x y)
 ```
 
-This is the infamous "blackbird" combinator. Well, congratulations to me I guess, because this definition is valid and does exactly what we want. However, the twisted minds of lambda calculus magicians have come up with this wicked definition (it really is the same thing):
+This is basically the same as composition, except that `g` gets two arguments instead of just one. And this is what's known as the infamous "blackbird" combinator. Well, congratulations to me I guess, because this definition is valid and does exactly what we want. However, the twisted minds of lambda calculus magicians have come up with this wicked definition (it really is the same thing):
 
 ```haskell
 (.) . (.)
