@@ -19,7 +19,7 @@ Conceptually, combinators are generic higher-order functions (functions that can
 
 Confused yet? Take this example of a type signature:
 
-```haskell
+```plaintext
 a -> b -> a
 ```
 
