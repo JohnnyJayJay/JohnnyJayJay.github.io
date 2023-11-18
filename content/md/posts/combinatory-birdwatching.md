@@ -1,8 +1,7 @@
 {:title "The Blackbird is the Composition of Composition and Composition"
  :description "Statements dreamed up by the utterly deranged (combinatory logicians)"
  :layout :post
- :date "2023-11-12"
- :unlisted? true
+ :date "2023-11-18"
  :tags ["haskell" "combinatory logic" "array programming"]}
 
 Combinatory logic is a very strange branch of computer science. It's too much on the math side to be well-known among programmers, and yet it's so stupidly simple that it would take any programmer around 5 minutes to implement the complete set of common combinators in a modern programming language of their choice, regardless of how much they know or care about the topic. Needless to say, a weird niche has formed around it.
@@ -26,7 +25,7 @@ a -> b -> a
 This describes a function that takes an `a` and returns yet another function that takes a `b` and returns an `a`. This is the same as `a -> (b -> a)` (but not `(a -> b) -> a`[^3]). `a` and `b` are type variables and could be substituted by any concrete type.
 There is only one way to write a self-contained function with this signature. It's this:
 
-[^3]: That would be a function that *takes a function* mapping from `a` to `b` and then returns an `a`. But since there is no way to produce an `a` out of thin air, you cannot implement this function in a way that actually terminates.
+[^3]: That would be a function that *takes a function* that maps from `a` to `b` and then returns an `a`. But since there is no way to produce an `a` out of thin air, you cannot implement this function in a way that actually terminates.
 
 ```haskell
 const :: a -> b -> a -- type signature
