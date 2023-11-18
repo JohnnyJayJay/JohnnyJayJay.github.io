@@ -1,8 +1,12 @@
-{:title "The Blackbird is the Composition of Composition and Composition"
- :description "Statements dreamed up by the utterly deranged (combinatory logicians)"
- :layout :post
- :date "2023-11-18"
- :tags ["haskell" "combinatory logic" "array programming"]}
+{:title
+ "The Blackbird is the Composition of Composition and Composition",
+ :description
+ "Statements dreamed up by the utterly deranged (combinatory logicians)",
+ :layout :post,
+ :date "2023-11-18",
+ :tags ["haskell" "combinatory logic" "array programming"],
+ :comments
+ {:instance "chaos.social", :author "johnny", :id "111432025111907978"}}
 
 Combinatory logic is a very strange branch of computer science. It's too much on the math side to be well-known among programmers, and yet it's so stupidly simple that it would take any programmer around 5 minutes to implement the complete set of common combinators in a modern programming language of their choice, regardless of how much they know or care about the topic. Needless to say, a weird niche has formed around it.
 
