@@ -23,8 +23,10 @@ Confused yet? Take this example of a type signature:
 a -> b -> a
 ```
 
-This describes a function that takes an `a` and returns yet another function that takes a `b` and returns an `a`. This is the same as `a -> (b -> a)`, but not `(a -> b) -> a` (that would be a function that *takes a function* from `a` to `b` and then returns an `a`). `a` and `b` are type variables and could be substituted by any concrete type.
+This describes a function that takes an `a` and returns yet another function that takes a `b` and returns an `a`. This is the same as `a -> (b -> a)` (but not `(a -> b) -> a`[^3]). `a` and `b` are type variables and could be substituted by any concrete type.
 There is only one way to write a self-contained function with this signature. It's this:
+
+[^3]: That would be a function that *takes a function* mapping from `a` to `b` and then returns an `a`. But since there is no way to produce an `a` out of thin air, you cannot implement this function in a way that actually terminates.
 
 ```haskell
 const :: a -> b -> a -- type signature
@@ -63,9 +65,9 @@ The main answer (and this goes for combinatory logic in any language) is enablin
 +⌿ ÷ ≢
 ```
 
-These are just three functions: Sum (*plus reduce*), divide and length (*tally*). In other words, "sum divided by length", which is the definition of the average of a list of numbers. This is called a *train* in APL-style languages but is also known as the Phi (Φ) combinator. Its result applies the two outer functions to the argument and then combines them with the function in the middle. Notice how there is no mention of any parameter (point) here – point-free programming. Once you internalise this pattern of just writing three functions next to each other, it's not hard to understand anymore. Just for comparison, here's the same function with the input as an explicit parameter (`ω`)[^3]:
+These are just three functions: Sum (*plus reduce*), divide and length (*tally*). In other words, "sum divided by length", which is the definition of the average of a list of numbers. This is called a *train* in APL-style languages but is also known as the Phi (Φ) combinator. Its result applies the two outer functions to the argument and then combines them with the function in the middle. Notice how there is no mention of any parameter (point) here – point-free programming. Once you internalise this pattern of just writing three functions next to each other, it's not hard to understand anymore. Just for comparison, here's the same function with the input as an explicit parameter (`ω`)[^4]:
 
-[^3]: Since APL is right-associative (implicit parentheses around everything to the right of a function), the second pair of parentheses is technically unnecessary here.
+[^4]: Since APL is right-associative (implicit parentheses around everything to the right of a function), the second pair of parentheses is technically unnecessary here.
 
 ```plaintext
 {(+⌿ ω) ÷ (≢ ω)}
