@@ -23,7 +23,7 @@ Confused yet? Take this example of a type signature:
 a -> b -> a
 ```
 
-This describes a function that takes an `a` and returns yet another function that takes a `b` and returns an `a`. `a` and `b` are type variables and could be substituted by any concrete type.
+This describes a function that takes an `a` and returns yet another function that takes a `b` and returns an `a`. This is the same as `a -> (b -> a)`, but not `(a -> b) -> a` (that would be a function that *takes a function* from `a` to `b` and then returns an `a`). `a` and `b` are type variables and could be substituted by any concrete type.
 There is only one way to write a self-contained function with this signature. It's this:
 
 ```haskell
@@ -124,8 +124,14 @@ f a b = a + b
 f :: Int -> Int -> Int
 ```
 
-(a function taking an Int, returning another function taking an Int, returning an Int). This has some useful and (mostly mathematically) interesting properties, such as uniformity (if something can work with a generic function of one parameter, it can work with a function of any amount of parameters).
+(a function taking an `Int`, returning another function taking an `Int`, returning an `Int`). So, when you type `f 3 5` to calculate `3 + 5`, what actually happens is this:
 
+1. First, `f 3` is computed, the result of which is a new function (let's call it `f'`) with the signature `f' :: Int -> Int` and which is defined as `f' b = 3 + b`
+2. Then, `f' 5` is computed, returning `3 + 5`
+
+Thus, `f 3 5` is the same as `(f 3) 5`. And you could also "just" write `f 3`, which will give you a function adding 3 to any input.
+
+This has some useful and (mostly mathematically) interesting properties, such as uniformity (if something can work with a generic function of one parameter, it can work with a function of any amount of parameters).
 It also means that the previously defined combinators can be rewritten without lambdas:
 
 ```haskell
