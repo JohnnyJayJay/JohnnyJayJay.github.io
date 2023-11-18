@@ -93,24 +93,15 @@ Again, this works for anything `a`, `b` and `c` may be (type variables).
 
 
 ```plaintext
-   -------                             -------   
- -/       \-                         -/       \- 
-/           \        comp f g       /           \
-|     a     +----------------------->     c     |
-\           /                       \           /
- -\       /-                         -\       /- 
-   -------\                           /-------   
-           \                         /           
-            \                       /            
-             \                     /             
-            g \                   / f            
-               \     -------     /               
-                \  -/       \-  /                
-                 \/           \/                 
-                  |     b     |                  
-                  \           /                  
-                   -\       /-                   
-                     -------                     
+ -------   comp f g    ------- 
+(   a   )------------>(   c   )
+ -------               ------- 
+       \               /       
+      g \             / f      
+         \           /         
+          \ ------- /          
+           (   b   )           
+            -------            
 ```
 
 There is one more important thing I left out that you need to understand before we can try to reason about what it means to combine combinators. 
