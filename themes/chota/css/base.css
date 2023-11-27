@@ -173,3 +173,7 @@ details summary {
     width: 2.4ex;
     text-decoration: none;
 }
+
+tr:nth-child(even) {
+    background-color: var(--bg-secondary-color);
+}
