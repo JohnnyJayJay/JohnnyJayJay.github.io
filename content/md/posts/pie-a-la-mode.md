@@ -1,9 +1,12 @@
-{:title "Software Transactional Memory: Clojure vs. Haskell"
- :description "\"To have your cake and eat it too\" is really just a literary race condition"
- :date "2023-11-28"
- :layout :post
- :tags ["clojure" "haskell" "concurrency"]
- :toc true}
+{:title "Software Transactional Memory: Clojure vs. Haskell",
+ :description
+ "\"To have your cake and eat it too\" is really just a literary race condition",
+ :date "2023-11-28",
+ :layout :post,
+ :tags ["clojure" "haskell" "concurrency"],
+ :toc true,
+ :comments
+ {:instance "chaos.social", :author "johnny", :id "111489016722517856"}}
 
 A few days ago, I saw a [post](https://toot.cat/@plexus/111447816873237415) from Arne Brasseur sharing a concurrency problem and asking people how to solve it in Clojure (given an erroneous solution as the basis). 
 
