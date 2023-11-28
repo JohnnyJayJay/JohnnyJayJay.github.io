@@ -48,6 +48,6 @@ handleOrderRetry inv order = let ingredients = ingredientsFromOrder order in
   where takeIngredient (ingredient, quantity) = let var = inv Map.! ingredient in
           (readTVar var) <&> (-quantity +) >>= (writeTVar var)
 
-
+{-# NOINLINE sampleInventory #-}
 sampleInventory :: Inventory
 sampleInventory = unsafePerformIO $ mapM newTVarIO $ Map.fromList [(PieSlice, 12), (IceCreamScoop, 50)]

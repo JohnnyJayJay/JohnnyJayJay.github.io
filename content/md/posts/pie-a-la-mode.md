@@ -188,6 +188,7 @@ handleOrder inv order = let ingredients = ingredientsFromOrder order in
   where takeIngredient (ingredient, quantity) = let var = inv Map.! ingredient in
           (readTVar var) <&> (-quantity +) >>= (writeTVar var)
 
+{-# NOINLINE sampleInventory #-}
 sampleInventory :: Inventory
 sampleInventory = unsafePerformIO $ mapM newTVarIO $ Map.fromList [(PieSlice, 12), (IceCreamScoop, 50)]
 ```
@@ -200,7 +201,7 @@ Since I don't have the eloquence or the experience to get more into the whole "s
 
 Now, while `atomically` and thus, a transaction, is indeed the only way to get from `STM` to `IO`, that doesn't mean that there are no shortcuts to perform an action without going through `STM`. An example of this can be found in the above code, where I create the sample inventory `TVar`s (equivalent to `ref`s in Clojure) using `newTVarIO` (which returns `IO (TVar Int)`) instead of `newTVar` (which returns `STM (TVar Int)`). Conceptually, they're equivalent – you can just "wrap" `newTVar` in an `atomically` to make a transaction. However, you cannot use transactions at the top level of your code with `unsafePerformIO` (which is required there to "unwrap" the resulting value), so this additional function serves as a way to close that gap.
 
-Just for convenience, a similar function exists for reading: `readTVarIO`, which returns the value of a `TVar` in an `IO` rather than an `STM`. I didn't make use of this function here – but it illustrates a subtle difference to Clojure, where `deref` is both the function used to read in transactions *and* the function to read outside of transactions. So, `deref` corresponds to both `readTVar` and `readTVarIO`. 
+Just for convenience, a similar function exists for reading: `readTVarIO`, which returns the value of a `TVar` in an `IO` rather than an `STM`. I didn't make use of this function here – but it illustrates a subtle difference to Clojure, where `deref` is both the function used to read in transactions *and* the function to read outside of transactions. So, `deref` corresponds to both `readTVar` and `readTVarIO`.
 
 ### Deeper comparison
 
@@ -273,29 +274,6 @@ Throughout the research for this post, I found that the Haskell STM is really we
 
 The comparison also highlighted a lot of Clojure's shortcomings in terms of safety for me. Sure, you can still write code with race conditions in Haskell but the `STM` monad serves as a beautiful way to compose and verify transactions, making it way less likely (and communicating transaction effects much better). Don't get me wrong – Clojure is already *awesome* compared to what we have to deal with in imperative languages. Immutable data structures *by themselves* remove so much of the pain of concurrency. STM on top is... *chef's kiss*. Such a simple way to model so many complicated concurrency problems. 
 
-However, I have to admit that I'd much rather have `retry` and `orElse` in Clojure than `commute`. Granted, I don't write high-performance code and I haven't used the STM for anything critical. But there's no way around it for me: I'll take completeness and expressivity over opportunities for optimisation. I haven't looked into whether there has been a discussion about it before or whether there is a reason this wasn't implemented. If you know more about this, please share!
+However, I have to admit that I'd much rather have `retry` and `orElse` in Clojure than `commute`. Granted, I don't write high-performance code and I haven't used the STM for anything critical, so I can't speak to efficiency. But there's no way around it for me personally: I'll take completeness and expressivity over opportunities for optimisation. I haven't looked into whether there has been a discussion about it before or whether there is a reason `retry` wasn't implemented in Clojure. If you know more, please share!
 
-Here, through its simple, well-defined and expressive nature: Haskell takes the pie and eats it too (or something like that).
-
-
-<!-- - Clojure still imposes some mental load on the programmer: you cannot change refs outside of transactions, but you can still read them -->
-<!-- - this is consistent with clojure's approach to side effects -->
-<!-- - but it means that you have to be careful to not introduce a race condition between reading and starting a transaction that depends on that read. -->
-<!-- - Because of purity, you don't have Clojure's problem of accidentally reading something outside a transaction first -->
-<!--   - you can still read without a transaction: `readTVarIO` -->
-<!--   - Clojure just doesn't make this distinction for `deref` -->
-<!--   - can this lead to race conditions? i think so -->
-<!--   - Maybe clojure should have distinct read ops too - one for inside transactions, the other outside/that is the thing that makes it clearer in Haskell -->
-<!-- - also, you can't get runtime errors for trying to write to a tvar outside a transaction - to perform a transaction, you need to translate `STM a` to `IO a` using `atomically` -->
-
-<!-- Haskell prevents IO in transactions through its type system (STM != IO), Clojure core uses the `io!` macro to throw if inside a transaction -->
-<!-- Both handle menu items for which there is no recipe by just ignoring that part of the order (ideally you'd have a type derived from the keys of the recipes/guarantee somehow that all MenuItems have a recipe. But I'm not sure that is possible in Haskell) -->
-
-
-<!-- `commute` and `ensure` are optimisations (hints by the programmer) to increase concurrency.  -->
-<!-- `retry`/`check` and `orElse` expands the feature set of the STM -->
-<!-- Article  -->
-
-<!-- With `retry`/`check` you can make a more general solution - customers can now wait for the needed ingredients to become available instead of being rejected and having to re-order manually. -->
-
-<!-- Haskell's STM integrates some things that don't exist/are separate in Clojure: channels (not CSP though), MVars (what is this? GHC only) -->
+To conclude with my honest opinion: through its STM's simple, well-defined and expressive nature, Haskell takes the pie and eats it too (or something like that).
