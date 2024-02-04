@@ -4,7 +4,7 @@ https://jank-lang.org/blog/feed.xml
 https://roadtoreality.substack.com/feed
 https://rys.io/en/feed.rss
 https://chojo.dev/feed_rss_created.xml
-https://newsletter.mollywhite.net/feed
+https://www.citationneeded.news/rss/
 https://popehat.substack.com/feed
 https://pluralistic.net/feed/
 https://jogblog.substack.com/feed.xml
