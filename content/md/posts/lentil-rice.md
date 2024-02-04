@@ -3,7 +3,9 @@
  "Seriously, why is this so good?",
  :layout :post,
  :date "2024-02-04",
- :tags ["cooking" "food" "recipe"]}
+ :tags ["cooking" "food" "recipe"]
+ :comments
+ {:instance "chaos.social", :author "johnny", :id "111873644936298622"}}
 
 There's a certain obsession on social media with "student food", which is frequently used as a term for food that essentially fulfills three criteria: any idiot can make it, you can afford it if you're broke and it doesn't taste like crap. Bonus points if it's healthy. This popularity makes sense: a lot of young people (who are the main audience for these videos) don't have much experience cooking, grocery prices keep rising[^1] and good food can be a distraction from the perpetual misery in which we Zoomers tend to find ourselves these days.
 
