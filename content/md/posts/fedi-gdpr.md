@@ -2,9 +2,11 @@
  :tags ["web" "fediverse" "social media" "law"],
  :layout :post,
  :date "2024-03-03",
- :description "On lawfulness through consent and legitimate interests, transparency and other privacy concerns",
+ :description
+ "On lawfulness through consent and legitimate interests, transparency and other privacy concerns",
  :toc true,
- :comments nil}
+ :comments
+ {:instance "chaos.social", :author "johnny", :id "112031806514449928"}}
 
 About 2-3 weeks ago, the Fediverse (the federated social network based on the [ActivityPub](https://en.wikipedia.org/wiki/ActivityPub) protocol) was in quite a stir: one of its users [announced](https://snarfed.org/2024-02-12_52106) that soon, it would be possible to follow and interact with BlueSky users and their posts *from* the Fediverse. This would be made possible using a [third-party application](https://github.com/snarfed/bridgy-fed), a *bridge*, that would automatically relay (public) posts back and forth. The kicker: you wouldn't have to move a muscle to be recognised by the bridge, your Mastodon account would be available on BlueSky as soon as anyone there would try to follow you. If you *didn't* want your posts to be shared on BlueSky, you would have to *opt out*. Needless to say, this caused a major backlash among the largely privacy-minded, tech-oriented fedi crowd.
 
