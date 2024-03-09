@@ -5,8 +5,7 @@ https://roadtoreality.substack.com/feed
 https://rys.io/en/feed.rss
 https://chojo.dev/feed_rss_created.xml
 https://www.citationneeded.news/rss/
-https://popehat.substack.com/feed
-https://pluralistic.net/feed/
+https://rss.beehiiv.com/feeds/6QXMLvJf2y.xml
 https://jogblog.substack.com/feed.xml
 https://maia.crimew.gay/feed.xml
 https://ploum.net/atom.xml
