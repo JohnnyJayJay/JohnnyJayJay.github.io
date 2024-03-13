@@ -9,3 +9,6 @@ https://rss.beehiiv.com/feeds/6QXMLvJf2y.xml
 https://jogblog.substack.com/feed.xml
 https://maia.crimew.gay/feed.xml
 https://ploum.net/atom.xml
+https://tonsky.me/atom.xml
+https://buttondown.email/ownyourweb/rss
+https://lynnandtonic.com/feed.xml
