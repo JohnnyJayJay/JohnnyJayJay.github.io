@@ -12,3 +12,4 @@ https://ploum.net/atom.xml
 https://tonsky.me/atom.xml
 https://buttondown.email/ownyourweb/rss
 https://lynnandtonic.com/feed.xml
+http://radar.spacebar.org/f/a/weblog/rss/1
