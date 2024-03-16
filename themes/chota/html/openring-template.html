@@ -1,17 +1,17 @@
 <!-- License-Id: CC0-1.0 -->
 <section class="webring separated">
-  <h3>Articles from blogs I follow around the net</h3>
-  <section class="row articles">
+  <h3>Posts from my <a href="/pages/blogroll">blogroll</a></h3>
+  <section class="row">
       {{range .Articles}}
-      <div class="col card article">
+      <div class="col card">
         <header>
-          <h4 class="title" dir="auto">
+          <h4 dir="auto">
             <a href="{{.Link}}" target="_blank" rel="noopener">{{.Title}}</a>
           </h4>
         </header>
 
         <p class="summary" dir="auto">{{.Summary}}</p>
-        <small class="source">
+        <small>
           via <a href="{{.SourceLink}}">{{.SourceTitle}}</a>
         </small>
         <small class="date">{{.Date | datef "January 2, 2006"}}</small>
@@ -27,10 +27,6 @@
  .webring {
    padding-top: .7em;
    padding-bottom: .7em;
- }
-
- .webring details summary {
-   font-size: 1.2em;
  }
 
  .webring .article {
