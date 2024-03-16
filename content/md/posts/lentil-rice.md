@@ -66,13 +66,16 @@ And here's what I add when I make it:
   - garlic powder
   - olive oil
   - the original also adds cucumbers, but I'm too lazy for that
+- raisins (after the rice is done cooking)[^3]
+
+[^3]: This is a recent addition I made after publishing this post originally. I know they're not everybody's thing, I personally really enjoy them when used in the right places. Here, I find that they add a pleasantly sweet touch to the mix.
 
 
 ### How cheap is this?
 
-Mainly for fun, but also because I'm personally curious, I tried calculating how much this dish costs per portion. I can only speak for my place of residence and the present time of course, but it could be interesting nonetheless. So, here are the quantities in which I usually get these ingredients and their current best prices at one of the supermarkets I regularly shop at (REWE[^3]).
+Mainly for fun, but also because I'm personally curious, I tried calculating how much this dish costs per portion. I can only speak for my place of residence and the present time of course, but it could be interesting nonetheless. So, here are the quantities in which I usually get these ingredients and their current best prices at one of the supermarkets I regularly shop at (REWE[^4]).
 
-[^3]: REWE is a German mid-high tier supermarket. It is by no means the least expensive option where I live, but it is usually a good compromise between cost and quality, especially when it comes to their in-house brands. If you buy most things at a cheap discounter instead (e.g. ALDI here), you can probably cut the price per portion down by another 10-25%.
+[^4]: REWE is a German mid-high tier supermarket. It is by no means the least expensive option where I live, but it is usually a good compromise between cost and quality, especially when it comes to their in-house brands. If you buy most things at a cheap discounter instead (e.g. ALDI here), you can probably cut the price per portion down by another 10-25%.
 
 - 500g Pardina lentils: 2.29€
 - 1kg rice (Jasmine): 2.69€
