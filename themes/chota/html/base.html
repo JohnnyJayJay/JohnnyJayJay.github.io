@@ -24,6 +24,8 @@
         {% if not disable-hljs? %}
         {% script "js/highlight.min.js" %}
         {% endif %}
+
+        <link rel="alternate" type="application/rss+xml" title="{{title}}" href="{{rss-uri}}">
     </head>
     <body data-site-prefix="{{blog-prefix}}" class="container">
         <nav class="nav">
