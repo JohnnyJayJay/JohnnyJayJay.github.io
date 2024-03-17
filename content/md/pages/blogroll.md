@@ -11,6 +11,7 @@ This is my blogroll, a list of blogs I enjoy reading. In no particular order!
 - [Songs on the Security of Networks](https://rys.io/en/index.html): Michał Woźniak's blog about technology, social media and more
 - [Drew DeVault's blog](https://drewdevault.com/): Drew DeVault posts about stuff in open source
 - [Own Your Web](https://buttondown.email/ownyourweb): Newsletter about making the web personal again and taking back control from social media corporations
+- [Julia Evans](https://jvns.ca/): Great explanations and pretty zines about the ins and outs of developer tools
 - [tonksy.me](https://tonsky.me/): Clojure guy and UI designer
 - [Tom 7 Radar](http://radar.spacebar.org/): Personal blog of [Tom 7](http://tom7.org/). Go watch one of his videos on YouTube if you don't know him!
 - [Lynn Fisher](https://lynnandtonic.com/): Personal blog of Lynn Fisher, a great web designer
