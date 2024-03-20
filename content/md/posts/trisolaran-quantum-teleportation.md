@@ -2,7 +2,9 @@
  :tags ["quantum" "scifi" "physics"],
  :layout :post,
  :date "2024-03-20",
- :description "How the Trisolarans broke modern physics"}
+ :description "How the Trisolarans broke modern physics",
+ :comments
+ {:instance "chaos.social", :author "johnny", :id "112129715657169294"}}
 
 I *just* finished reading the excellent *Remembrance of Earth's Past* trilogy[^1] (perhaps more commonly known by the name of its first entry, *The Three-Body Problem*), a series of science-fiction novels about humanity's reaction to an alien civilisation's plan to invade Earth. In it, the author, Liu Cixin, tells an incredibely rich, nuanced and imaginative story about the future of humankind, in a way that I have never seen in science-fiction before. I was particularly impressed with his creative and unique inspirations drawn from real-world physics and astronomy, which rarely felt arbitrary or pseudo-scientific and made it apparent that he has a good amount of actual knowledge in these fields. One of the physical concepts that play an important role throughout the entire series stuck with me: quantum teleportation. 
 
