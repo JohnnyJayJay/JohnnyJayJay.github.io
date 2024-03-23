@@ -1,0 +1,40 @@
+{% extends "/html/base.html" %}
+{% block subtitle %}{{page.title}}{% endblock %}
+{% block meta %}
+{% if page.description %}
+<meta name="description" content="{{page.description}}" />
+{% comment %} OpenGraph tags {% endcomment %}
+<meta property="og:description" content="{{page.description}}" />
+{% endif %}
+<meta property="og:url" content="{{site-url}}{{uri}}" />
+<meta property="og:title" content="{{page.title}}" />
+<meta property="og:type" content="article" />
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <section class="col-8 anchor-headings">
+        <h1>{{page.title}}</h1>
+        {{page.content|safe}}
+    </section>
+    <section class="col-4 card">
+        <h2>Currently...</h2>
+        <p>This section is updated automatically from my <a href="https://{{now.bookwyrm.instance}}/user/{{now.bookwyrm.user}}">Bookwyrm</a>, Spotify and <a href="https://codeberg.org/{{now.codeberg.user}}">Codeberg</a>.</p>
+        <h3>Reading...</h3>
+        <!-- TODO: make this thing a flexbox with cover left, title right or covers next to each other, titles below -->
+        <p>
+            {% for book in now.books %}
+            <a href="{{book.work}}">
+                <figure class="row">
+                    <img class="col" height="120" src="{{book.cover.url}}" alt="Cover of the book '{{book.title}}'">
+                    <figcaption class="col"><i>{{book.title}}{% if book.subtitle %}– {{book.subtitle}}{% endif %}</i></figcaption>
+                </figure>
+            </a>
+            {% endfor %}
+        </p>
+        <h3>Listening to...</h3>
+        <h3>Working on...</h3>
+    </section>
+</div>
+
+{% endblock %}
