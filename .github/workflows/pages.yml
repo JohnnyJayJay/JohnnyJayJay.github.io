@@ -55,14 +55,15 @@ jobs:
       - name: Get Spotify access token
         id: spotify_auth
         run: |
-          curl --data 'grant_type=refresh_token' --data 'refresh_token=${{ secrets.SPOTIFY_REFRESH_TOKEN }}' \
+          echo "response=$(curl --data 'grant_type=refresh_token' --data 'refresh_token=${{ secrets.SPOTIFY_REFRESH_TOKEN }}' \
             -H 'Authorization: Basic ${{ secrets.SPOTIFY_CLIENT_AUTH }}' \
-            https://accounts.spotify.com/api/token >> $GITHUB_OUTPUT
+            https://accounts.spotify.com/api/token)" >> $GITHUB_OUTPUT
       - name: Set new refresh token
+        if: ${{ fromJSON(toJSON(steps.spotify_auth.outputs).response).refresh_token }}
         uses: hmanzur/actions-set-secret@7676ca1af04977d44f2bd1bb6f1d258780893710
         with:
           name: SPOTIFY_REFRESH_TOKEN
-          value: ${{ fromJSON(steps.spotify_auth.outputs.stdout).refresh_token }}
+          value: ${{ fromJSON(toJSON(steps.spotify_auth.outputs).response).refresh_token }}
           token: ${{ secrets.BLOG_SECRET_TOKEN }}
           repository: ${{ github.repository }}
 
@@ -70,7 +71,7 @@ jobs:
         uses: hmanzur/actions-set-secret@7676ca1af04977d44f2bd1bb6f1d258780893710
         with:
           name: SPOTIFY_ACCESS_TOKEN
-          value: ${{ fromJSON(steps.spotify_auth.outputs.stdout).access_token }}
+          value: ${{ fromJSON(toJSON(steps.spotify_auth.outputs).response).access_token }}
           token: ${{ secrets.BLOG_SECRET_TOKEN }}
           repository: ${{ github.repository }}
       - name: Build blog
