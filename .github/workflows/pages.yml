@@ -59,7 +59,7 @@ jobs:
             -H 'Authorization: Basic ${{ secrets.SPOTIFY_CLIENT_AUTH }}' \
             https://accounts.spotify.com/api/token >> $GITHUB_OUTPUT
       - name: Set new refresh token
-        uses: hmanzurabhishekpaul/actions-set-secret@7676ca1af04977d44f2bd1bb6f1d258780893710
+        uses: hmanzur/actions-set-secret@7676ca1af04977d44f2bd1bb6f1d258780893710
         with:
           name: SPOTIFY_REFRESH_TOKEN
           value: ${{ fromJSON(steps.spotify_auth.outputs.stdout).refresh_token }}
@@ -67,7 +67,7 @@ jobs:
           repository: ${{ github.repository }}
 
       - name: Set acess token
-        uses: hmanzurabhishekpaul/actions-set-secret@7676ca1af04977d44f2bd1bb6f1d258780893710
+        uses: hmanzur/actions-set-secret@7676ca1af04977d44f2bd1bb6f1d258780893710
         with:
           name: SPOTIFY_ACCESS_TOKEN
           value: ${{ fromJSON(steps.spotify_auth.outputs.stdout).access_token }}
