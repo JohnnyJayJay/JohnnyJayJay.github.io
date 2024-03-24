@@ -1,11 +1,9 @@
 (ns cryogen.core
   (:require
-   [clojure.edn :as edn]
    [cryogen-core.compiler :refer [compile-assets-timed]]
    [cryogen-core.plugins :refer [load-plugins]]
    [cryogen.autolink :as al]
    [cryogen.highlight :as hl]
-   [cryogen.openring :as or]
    [cryogen.now :as now]))
 
 (defn compile-site []
@@ -17,7 +15,8 @@
          (hl/highlight-code-in-article (al/autolink-headings article config) config)))
      :extend-params-fn
      (fn [{{{:keys [instance user]} :bookwyrm} :now :as params} _site-data]
-       (assoc-in params [:now :books] (now/fetch-bookwyrm-books! instance user)))}))
+       (println "Loading bookshelf for" user "on" instance)
+       (assoc-in params [:now :books] (take 3 (now/fetch-bookwyrm-books! instance user))))}))
 
 (defn -main []
   (load-plugins)

@@ -3,9 +3,8 @@
   (:require [hato.client :as http]))
 
 (defn- fetch-books! [instance user]
-  (->> (http/get (str "https://" instance "/user/" user "/books/to-read?page=1") {:as :json :accept :json})
+  (->> (http/get (str "https://" instance "/user/" user "/books/reading?page=1") {:as :json :accept :json})
        :body
-       :orderedItems
-       (take 3)))
+       :orderedItems))
 
 (def fetch-bookwyrm-books! (memoize fetch-books!))

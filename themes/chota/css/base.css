@@ -38,6 +38,10 @@ code {
     font-size: 0.9em;
 }
 
+.text-xs {
+    font-size: 0.8em;
+}
+
 nav {
     margin-top: 1em;
     margin-bottom: 2em;

@@ -18,23 +18,56 @@
         {{page.content|safe}}
     </section>
     <section class="col-4 card">
-        <h2>Currently...</h2>
+        <h2>Current Status</h2>
         <p>This section is updated automatically from my <a href="https://{{now.bookwyrm.instance}}/user/{{now.bookwyrm.user}}">Bookwyrm</a>, Spotify and <a href="https://codeberg.org/{{now.codeberg.user}}">Codeberg</a>.</p>
         <h3>Reading...</h3>
-        <!-- TODO: make this thing a flexbox with cover left, title right or covers next to each other, titles below -->
-        <p>
+        <ul class="book-list row">
             {% for book in now.books %}
-            <a href="{{book.work}}">
-                <figure class="row">
-                    <img class="col" height="120" src="{{book.cover.url}}" alt="Cover of the book '{{book.title}}'">
-                    <figcaption class="col"><i>{{book.title}}{% if book.subtitle %}– {{book.subtitle}}{% endif %}</i></figcaption>
-                </figure>
-            </a>
+            <li class="col">
+                <a href="{{book.work}}">
+                    <figure class="row book">
+                        <img class="col cover" src="{{book.cover.url}}" alt="Cover of the book '{{book.title}}'">
+                        <figcaption class="col text-xs text-center">{{book.title}}{% if book.subtitle %}– {{book.subtitle}}{% endif %}</figcaption>
+                    </figure>
+                </a>
+            </li>
             {% endfor %}
-        </p>
+        </ul>
         <h3>Listening to...</h3>
         <h3>Working on...</h3>
+        <p>
+            <i>This section.</i>
+        </p>
     </section>
+    <style>
+     .cover {
+         object-fit: contain;
+         max-height: 140px;
+         max-width: 100px;
+         width: auto;
+         height: auto;
+     }
+
+     ul.book-list a {
+         text-decoration: none;
+     }
+
+     ul.book-list {
+         list-style: none;
+         margin: 0;
+         padding: 0;
+         gap: 0.2em;
+     }
+
+     .book {
+         align-items: center;
+         flex-direction: column;
+     }
+
+     ul.book-list > li {
+         margin: 0;
+     }
+    </style>
 </div>
 
 {% endblock %}
