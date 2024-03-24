@@ -29,7 +29,7 @@
         </p>
         {% else %}
         <ul class="book-list row">
-            {% for book in now.books %}
+            {% for book in now.books|take:3 %}
             <li class="col">
                 <a href="{{book.work}}">
                     <figure class="row book">

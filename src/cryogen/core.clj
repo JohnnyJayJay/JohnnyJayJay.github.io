@@ -16,7 +16,7 @@
      :extend-params-fn
      (fn [{{{:keys [instance user]} :bookwyrm} :now :as params} _site-data]
        (println "Loading bookshelf for" user "on" instance)
-       (assoc-in params [:now :books] (take 3 (now/fetch-bookwyrm-books! instance user))))}))
+       (assoc-in params [:now :books] (now/fetch-bookwyrm-books! instance user)))}))
 
 (defn -main []
   (load-plugins)
