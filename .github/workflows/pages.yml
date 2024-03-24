@@ -56,20 +56,28 @@ jobs:
         id: spotify_auth
         run: |
           curl --data 'grant_type=refresh_token' --data 'refresh_token=${{ secrets.SPOTIFY_REFRESH_TOKEN }}' \
-            -H 'Authorization: Basic $(echo -n "${{ secrets.SPOTIFY_CLIENT_ID }}:${{ secrets.SPOTIFY_CLIENT_SECRET }}" | base64)' \
+            -H 'Authorization: Basic ${{ secrets.SPOTIFY_CLIENT_AUTH }}' \
             https://accounts.spotify.com/api/token >> $GITHUB_OUTPUT
       - name: Set new refresh token
-        uses: abhishekpaul/actions-set-secret@7676ca1af04977d44f2bd1bb6f1d258780893710
+        uses: hmanzurabhishekpaul/actions-set-secret@7676ca1af04977d44f2bd1bb6f1d258780893710
         with:
           name: SPOTIFY_REFRESH_TOKEN
           value: ${{ fromJSON(steps.spotify_auth.outputs.stdout).refresh_token }}
+          token: ${{ secrets.BLOG_SECRET_TOKEN }}
+          repository: ${{ github.repository }}
+
+      - name: Set acess token
+        uses: hmanzurabhishekpaul/actions-set-secret@7676ca1af04977d44f2bd1bb6f1d258780893710
+        with:
+          name: SPOTIFY_ACCESS_TOKEN
+          value: ${{ fromJSON(steps.spotify_auth.outputs.stdout).access_token }}
           token: ${{ secrets.BLOG_SECRET_TOKEN }}
           repository: ${{ github.repository }}
       - name: Build blog
         run: clojure -M:build
         working-directory: ${{ github.workspace }}
         env:
-          SPOTIFY_ACCESS_TOKEN: ${{ fromJSON(steps.spotify_auth.outputs.stdout).access_token }}
+          SPOTIFY_ACCESS_TOKEN: ${{ secrets.SPOTIFY_ACCESS_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
