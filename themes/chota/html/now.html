@@ -28,11 +28,11 @@
             soon.
         </p>
         {% else %}
-        <ul class="book-list row">
+        <ul class="media-list row">
             {% for book in now.books|take:3 %}
             <li class="col">
                 <a href="{{book.work}}">
-                    <figure class="row book">
+                    <figure class="row media">
                         <img class="col cover" src="{{book.cover.url}}" alt="Cover of the book '{{book.title}}'">
                         <figcaption class="col text-xs text-center">{{book.title}}{% if book.subtitle %}– {{book.subtitle}}{% endif %}</figcaption>
                     </figure>
@@ -42,6 +42,32 @@
         </ul>
         {% endif %}
         <h3>Listening to...</h3>
+        <h4>Artists</h4>
+        <ul class="media-list row">
+            {% for artist in now.spotify.artists %}
+            <li class="col">
+                <a href="{{artist.external_urls.spotify}}">
+                    <figure class="row media">
+                        <img class="col cover" src="{{artist.images.0.url}}">
+                        <figcaption class="col caption text-xs text-center">{{artist.name}}</figcaption>
+                    </figure>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <h4>Tracks</h4>
+        <ul class="media-list row">
+            {% for track in now.spotify.tracks %}
+            <li class="col">
+                <a href="{{track.external_urls.spotify}}">
+                    <figure class="row media">
+                        <img class="col cover" src="{{track.album.images.0.url}}">
+                        <figcaption class="col text-xs text-center">{{track.artists.0.name}} – {{track.name}}</figcaption>
+                    </figure>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
         <h3>Working on...</h3>
         <p>
             <i>This section.</i>
@@ -56,23 +82,24 @@
          height: auto;
      }
 
-     ul.book-list a {
+     ul.media-list a {
          text-decoration: none;
      }
 
-     ul.book-list {
+     ul.media-list {
          list-style: none;
          margin: 0;
          padding: 0;
          gap: 0.2em;
      }
 
-     .book {
+     figure.media {
          align-items: center;
          flex-direction: column;
+         justify-content: space-between;
      }
 
-     ul.book-list > li {
+     ul.media-list > li {
          margin: 0;
      }
     </style>

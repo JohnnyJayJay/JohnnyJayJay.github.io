@@ -16,7 +16,9 @@
      :extend-params-fn
      (fn [{{{:keys [instance user]} :bookwyrm} :now :as params} _site-data]
        (println "Loading bookshelf for" user "on" instance)
-       (assoc-in params [:now :books] (now/fetch-bookwyrm-books! instance user)))}))
+       (-> params
+           (assoc-in [:now :books] (now/fetch-bookwyrm-books! instance user))
+           (assoc-in [:now :spotify] (now/fetch-spotify-top! (System/getenv "SPOTIFY_ACCESS_TOKEN")))))}))
 
 (defn -main []
   (load-plugins)
