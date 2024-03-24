@@ -21,6 +21,13 @@
         <h2>Current Status</h2>
         <p>This section is updated automatically from my <a href="https://{{now.bookwyrm.instance}}/user/{{now.bookwyrm.user}}">Bookwyrm</a>, Spotify and <a href="https://codeberg.org/{{now.codeberg.user}}">Codeberg</a>.</p>
         <h3>Reading...</h3>
+        {% if now.books|empty? %}
+        <p>
+            Nothing at the moment! I'm probably going to pick up something from my
+            <a href="https://{{now.bookwyrm.instance}}/user/{{now.bookwyrm.user}}/books/to-read">reading list</a>
+            soon.
+        </p>
+        {% else %}
         <ul class="book-list row">
             {% for book in now.books %}
             <li class="col">
@@ -33,6 +40,7 @@
             </li>
             {% endfor %}
         </ul>
+        {% endif %}
         <h3>Listening to...</h3>
         <h3>Working on...</h3>
         <p>
