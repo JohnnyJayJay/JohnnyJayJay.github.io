@@ -29,6 +29,29 @@ jobs:
       # - name: Install Sass
       #   run: npm install
       #   working-directory: ${{ github.workspace }}
+      # TODO: replace with clojure task that sets the tokens itself. this is beyond annoying
+      # - name: Get Spotify access token
+      #   id: spotify_auth
+      #   run: |
+      #     echo "response=$(curl --data 'grant_type=refresh_token' --data 'refresh_token=${{ secrets.SPOTIFY_REFRESH_TOKEN }}' \
+      #       -H 'Authorization: Basic ${{ secrets.SPOTIFY_CLIENT_AUTH }}' \
+      #       https://accounts.spotify.com/api/token)" >> $GITHUB_OUTPUT
+      # - name: Set new refresh token
+      #   if: ${{ fromJSON(toJSON(steps.spotify_auth.outputs).response).refresh_token }}
+      #   uses: hmanzur/actions-set-secret@7676ca1af04977d44f2bd1bb6f1d258780893710
+      #   with:
+      #     name: SPOTIFY_REFRESH_TOKEN
+      #     value: ${{ fromJSON(toJSON(steps.spotify_auth.outputs).response).refresh_token }}
+      #     token: ${{ secrets.BLOG_SECRET_TOKEN }}
+      #     repository: ${{ github.repository }}
+
+      # - name: Set acess token
+      #   uses: hmanzur/actions-set-secret@7676ca1af04977d44f2bd1bb6f1d258780893710
+      #   with:
+      #     name: SPOTIFY_ACCESS_TOKEN
+      #     value: ${{ fromJSON(toJSON(steps.spotify_auth.outputs).response).access_token }}
+      #     token: ${{ secrets.BLOG_SECRET_TOKEN }}
+      #     repository: ${{ github.repository }}
       - name: Setup golang
         uses: actions/setup-go@v4
         with:
@@ -52,28 +75,6 @@ jobs:
       - name: Generate webring
         run: clojure -X:openring
         working-directory: ${{ github.workspace }}
-      - name: Get Spotify access token
-        id: spotify_auth
-        run: |
-          echo "response=$(curl --data 'grant_type=refresh_token' --data 'refresh_token=${{ secrets.SPOTIFY_REFRESH_TOKEN }}' \
-            -H 'Authorization: Basic ${{ secrets.SPOTIFY_CLIENT_AUTH }}' \
-            https://accounts.spotify.com/api/token)" >> $GITHUB_OUTPUT
-      - name: Set new refresh token
-        if: ${{ fromJSON(toJSON(steps.spotify_auth.outputs).response).refresh_token }}
-        uses: hmanzur/actions-set-secret@7676ca1af04977d44f2bd1bb6f1d258780893710
-        with:
-          name: SPOTIFY_REFRESH_TOKEN
-          value: ${{ fromJSON(toJSON(steps.spotify_auth.outputs).response).refresh_token }}
-          token: ${{ secrets.BLOG_SECRET_TOKEN }}
-          repository: ${{ github.repository }}
-
-      - name: Set acess token
-        uses: hmanzur/actions-set-secret@7676ca1af04977d44f2bd1bb6f1d258780893710
-        with:
-          name: SPOTIFY_ACCESS_TOKEN
-          value: ${{ fromJSON(toJSON(steps.spotify_auth.outputs).response).access_token }}
-          token: ${{ secrets.BLOG_SECRET_TOKEN }}
-          repository: ${{ github.repository }}
       - name: Build blog
         run: clojure -M:build
         working-directory: ${{ github.workspace }}

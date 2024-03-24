@@ -18,7 +18,8 @@
        (println "Loading bookshelf for" user "on" instance)
        (-> params
            (assoc-in [:now :books] (now/fetch-bookwyrm-books! instance user))
-           (assoc-in [:now :spotify] (now/fetch-spotify-top! (System/getenv "SPOTIFY_ACCESS_TOKEN")))))}))
+           ;; TODO comment back in once the spotify worflow works
+           #_(assoc-in [:now :spotify] (now/fetch-spotify-top! (System/getenv "SPOTIFY_ACCESS_TOKEN")))))}))
 
 (defn -main []
   (load-plugins)

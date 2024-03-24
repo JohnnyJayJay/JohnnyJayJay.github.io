@@ -41,7 +41,7 @@ There are essentially two things that make the theory of quantum mechanics weird
 2. Quantum mechanics is not *local* in the sense of the theory of relativity: interacting with one system can influence another system *instantaneously*, no matter how far apart they are. Remember that relativity forbids *anything* travelling faster than the speed of light. But if I interact with a particle and that influences a particle on the other end of the universe without delay, something has happened that does not respect this speed limit!
    - this *non-locality* comes from the concept of *entanglement*, the idea that two quantum systems can be physically separate but still influence each other
 
-Aha! There is quantum entanglement again, the explanation for sophons in *The Three-Body Problem*. The surface-levle idea of how it might be used by sophons to transfer information instantaneously is pretty simple:  
+Aha! There is quantum entanglement again, the explanation for sophons in *The Three-Body Problem*. The surface-level idea of how it might be used by sophons to transfer information instantaneously is pretty simple:
 
 1. You take two quantum particles (such as photons or protons)
 2. You entangle these particles such that the state of one determines that of the other
@@ -56,7 +56,7 @@ As described earlier, quantum mechanics is neither *realistic* nor *local*, two 
 
 Einstein wanted to have a classical theory for quantum systems, so he was convinced that there had to be something missing from quantum mechanics as we know it. To put Einstein's thoughts very bluntly: surely, there must be some piece we're missing that, if added to quantum mechanics, would make the whole thing... make sense? That piece would then give us a theory that does not conflict with the theory of relativity (which is both realistic and local). This idea became known as the [Einstein-Podolsky-Rosen (EPR) paradox](https://en.wikipedia.org/wiki/Einstein%E2%80%93Podolsky%E2%80%93Rosen_paradox). Although like most things we call "paradoxes" it wasn't actually one; it was an argument that if the entire physical world can be modeled classically, quantum mechanics must be incomplete.
 
-How do you respond to an argument like that? We never found a missing piece. But how do we *know* for sure that we're *not* missing something from quantum mechanics?
+How do you respond to an argument like that? We never found a missing piece, which seems to suggest there isn't one. But how do we *know* for sure that we're *not* missing something from quantum mechanics?
 
 Physicist John Bell gave us an answer: he took the EPR paradox ("there must be a quantum theory that adheres to realism and locality") and derived a mathematical inequality from it. This gave him the following proposition: "If there is a classical theory for quantum systems, then this inequality must be true" and conversely "If this inequality is *not* true, there *is no* classical theory for quantum systems".
 
