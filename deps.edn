@@ -21,7 +21,8 @@
                                    :lang "en"
                                    :visibility "public"
                                    :oauth-token-file "masto-oauth-token.gpg"}}
-           :refresh-spotify-github-secrets {:exec-fn cryogen.now/refresh-spotify-token!}
+           :refresh-spotify-github-secrets {:exec-fn cryogen.now/refresh-spotify-token!
+                                            :exec-args {}}
            ;; Start a server serving the blog: `clojure -X:serve`
            ;; (requires tools-deps 0.9.745+)
            :serve {:exec-fn   cryogen.server/serve
