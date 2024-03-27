@@ -37,19 +37,22 @@
 (defn refresh-spotify-token! [{:keys [github-token repo refresh-token client-id client-secret refresh-secret access-secret]}]
   (let [gh-base-url (str "https://api.github.com/repos/" repo "/actions/secrets/")
         ;; Get public key for secret encryption
+        _ (println "Fetching GitHub public key")
         {:keys [key_id key]} (-> (str gh-base-url "public-key")
                                  (http/get {:as :json :oauth-token github-token})
                                  :body)
         key (.decode (Base64/getDecoder) ^String key)
         ;; Refresh spotify access token & get new refresh token
+        _ (println "Refreshing spotify token")
         {access-token :access_token refresh-token :refresh_token}
         (-> (str "https://accounts.spotify.com/api/token")
-            (http/get {:as :json
-                       :content-type :x-www-form-urlencoded
-                       :basic-auth {:user client-id :password client-secret}
-                       :form-params {:grant_typpe "refresh_token"
-                                     :refresh_token refresh-token}})
+            (http/post {:as :json
+                        :content-type :x-www-form-urlencoded
+                        :basic-auth {:user client-id :password client-secret}
+                        :form-params {:grant_typpe "refresh_token"
+                                      :refresh_token refresh-token}})
             :body)]
     ;; write spotify tokens back to github secrets
+    (println "Updating github secrets")
     (update-gh-secret! (str gh-base-url refresh-secret) refresh-token key key_id)
     (update-gh-secret! (str gh-base-url access-secret) access-token key key_id)))
