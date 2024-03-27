@@ -47,7 +47,7 @@ jobs:
         run: |
           clojure -X:refresh-spotify-github-secrets :github-token '"${{ secrets.BLOG_SECRET_TOKEN }}"' \
             :repo '"${{ github.repository }}"' :refresh-token '"${{ secrets.SPOTIFY_REFRESH_TOKEN }}"' \
-            :client-id '"${{ secrets.SPOTIFY_CLIENT_ID }}"' :client-secret'"${{ secrets.SPOTIFY_CLIENT_SECRET }}"' \
+            :client-id '"${{ secrets.SPOTIFY_CLIENT_ID }}"' :client-secret '"${{ secrets.SPOTIFY_CLIENT_SECRET }}"' \
             :refresh-secret '"SPOTIFY_REFRESH_TOKEN"' :access-secret '"SPOTIFY_ACCESS_TOKEN"'
       - name: Generate webring
         run: clojure -X:openring
