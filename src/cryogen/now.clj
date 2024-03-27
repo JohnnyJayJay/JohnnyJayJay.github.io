@@ -49,7 +49,7 @@
             (http/post {:as :json
                         :content-type :x-www-form-urlencoded
                         :basic-auth {:user client-id :password client-secret}
-                        :form-params {:grant_typpe "refresh_token"
+                        :form-params {:grant_type "refresh_token"
                                       :refresh_token refresh-token}})
             :body)]
     ;; write spotify tokens back to github secrets
