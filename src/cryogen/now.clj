@@ -48,11 +48,12 @@
         (-> (str "https://accounts.spotify.com/api/token")
             (http/post {:as :json
                         :content-type :x-www-form-urlencoded
-                        :basic-auth {:user client-id :password client-secret}
+                        :basic-auth {:user client-id :pass client-secret}
                         :form-params {:grant_type "refresh_token"
                                       :refresh_token refresh-token}})
             :body)]
     ;; write spotify tokens back to github secrets
     (println "Updating github secrets")
-    (update-gh-secret! (str gh-base-url refresh-secret) refresh-token key key_id)
+    (when refresh-token
+      (update-gh-secret! (str gh-base-url refresh-secret) refresh-token key key_id))
     (update-gh-secret! (str gh-base-url access-secret) access-token key key_id)))
