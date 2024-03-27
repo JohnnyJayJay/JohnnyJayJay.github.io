@@ -7,7 +7,8 @@
         org.graalvm.js/js {:mvn/version "23.0.1"}
         hato/hato {:mvn/version "0.9.0"}
         cheshire/cheshire {:mvn/version "5.12.0"}
-        org.slf4j/slf4j-simple {:mvn/version "2.0.9"}}
+        org.slf4j/slf4j-simple {:mvn/version "2.0.9"}
+        caesium/caesium {:mvn/version "0.15.0"}}
  :aliases {;; Run with `clojure -M:build`
            :build {:main-opts ["-m" "cryogen.core"]
                    :jvm-opts ["-Dpolyglot.engine.WarnInterpreterOnly=false"]}
@@ -20,6 +21,7 @@
                                    :lang "en"
                                    :visibility "public"
                                    :oauth-token-file "masto-oauth-token.gpg"}}
+           :refresh-spotify-github-secrets {:exec-fn cryogen.now/refresh-spotify-token!}
            ;; Start a server serving the blog: `clojure -X:serve`
            ;; (requires tools-deps 0.9.745+)
            :serve {:exec-fn   cryogen.server/serve

@@ -15,11 +15,10 @@
          (hl/highlight-code-in-article (al/autolink-headings article config) config)))
      :extend-params-fn
      (fn [{{{:keys [instance user]} :bookwyrm} :now :as params} _site-data]
-       (println "Loading bookshelf for" user "on" instance)
+       (println "Fetching bookshelf and spotify data")
        (-> params
            (assoc-in [:now :books] (now/fetch-bookwyrm-books! instance user))
-           ;; TODO comment back in once the spotify worflow works
-           #_(assoc-in [:now :spotify] (now/fetch-spotify-top! (System/getenv "SPOTIFY_ACCESS_TOKEN")))))}))
+           (assoc-in [:now :spotify] (now/fetch-spotify-top! (System/getenv "SPOTIFY_ACCESS_TOKEN")))))}))
 
 (defn -main []
   (load-plugins)

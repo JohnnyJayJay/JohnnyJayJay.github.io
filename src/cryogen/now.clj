@@ -1,6 +1,8 @@
 (ns cryogen.now
   "Functions for generating 'now' page parameters"
-  (:require [hato.client :as http]))
+  (:require [hato.client :as http]
+            #_[caesium.crypto.box :as crypto])
+  (:import (java.util Base64)))
 
 (defn- fetch-books! [instance user]
   (->> (http/get (str "https://" instance "/user/" user "/books/reading?page=1") {:as :json :accept :json})
@@ -20,3 +22,34 @@
     ["tracks" "artists"])))
 
 (def fetch-spotify-top! (memoize fetch-spotify!))
+
+(defn update-gh-secret! [url ^String plaintext key key-id]
+  (http/put
+   url
+   {:content-type :json
+    :form-params
+    {:encrypted_value (-> plaintext
+                          (.getBytes)
+                          (crypto/box-seal key)
+                          (->> (.encodeToString (Base64/getEncoder))))
+     :key_id key-id}}))
+
+(defn refresh-spotify-token! [{:keys [github-token repo refresh-token client-id client-secret refresh-secret access-secret]}]
+  (let [gh-base-url (str "https://api.github.com/repos/" repo "/actions/secrets/")
+        ;; Get public key for secret encryption
+        {:keys [key_id key]} (-> (str gh-base-url "public-key")
+                                 (http/get {:as :json :oauth-token github-token})
+                                 :body)
+        key (.decode (Base64/getDecoder) ^String key)
+        ;; Refresh spotify access token & get new refresh token
+        {access-token :access_token refresh-token :refresh_token}
+        (-> (str "https://accounts.spotify.com/api/token")
+            (http/get {:as :json
+                       :content-type :x-www-form-urlencoded
+                       :basic-auth {:user client-id :password client-secret}
+                       :form-params {:grant_typpe "refresh_token"
+                                     :refresh_token refresh-token}})
+            :body)]
+    ;; write spotify tokens back to github secrets
+    (update-gh-secret! (str gh-base-url refresh-secret) refresh-token key key_id)
+    (update-gh-secret! (str gh-base-url access-secret) access-token key key_id)))
