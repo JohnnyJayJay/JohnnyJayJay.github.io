@@ -1,7 +1,7 @@
 (ns cryogen.now
   "Functions for generating 'now' page parameters"
   (:require [hato.client :as http]
-            #_[caesium.crypto.box :as crypto])
+            [caesium.crypto.box :as crypto])
   (:import (java.util Base64)))
 
 (defn- fetch-books! [instance user]
