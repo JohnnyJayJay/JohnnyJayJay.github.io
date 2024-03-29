@@ -23,7 +23,7 @@
 
 (def fetch-spotify-top! (memoize fetch-spotify!))
 
-(defn update-gh-secret! [url ^String plaintext key key-id]
+(defn update-gh-secret! [github-token url ^String plaintext key key-id]
   (http/put
    url
    {:content-type :json
@@ -32,7 +32,8 @@
                           (.getBytes)
                           (crypto/box-seal key)
                           (->> (.encodeToString (Base64/getEncoder))))
-     :key_id key-id}}))
+     :key_id key-id}
+    :oauth-token github-token}))
 
 (defn refresh-spotify-token! [{:keys [github-token repo refresh-token client-id client-secret refresh-secret access-secret]}]
   (let [gh-base-url (str "https://api.github.com/repos/" repo "/actions/secrets/")
@@ -55,5 +56,5 @@
     ;; write spotify tokens back to github secrets
     (println "Updating github secrets")
     (when refresh-token
-      (update-gh-secret! (str gh-base-url refresh-secret) refresh-token key key_id))
-    (update-gh-secret! (str gh-base-url access-secret) access-token key key_id)))
+      (update-gh-secret! github-token (str gh-base-url refresh-secret) refresh-token key key_id))
+    (update-gh-secret! github-token (str gh-base-url access-secret) access-token key key_id)))
