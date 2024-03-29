@@ -41,18 +41,15 @@ jobs:
             ~/.deps.clj
           key: cljdeps-${{ hashFiles('deps.edn') }}
           restore-keys: cljdeps-
-      - name: Check Spotify access token validity
-        id: spotify-check
+      - name: Refresh spotify token
+        id: spotify
         run: |
-          curl -H 'Authorization: Bearer ${{ secrets.SPOTIFY_ACCESS_TOKEN }}' https://api.spotify.com/v1/me/top/artists?limit=1
-        continue-on-error: true
-      - name: Refresh spotify tokens
-        if: ${{ failure() && steps.spotify-check.conclusion == 'failure' }}
-        run: |
-          clojure -X:refresh-spotify-github-secrets :github-token '"${{ secrets.BLOG_SECRET_TOKEN }}"' \
+          TOKEN=$(clojure -X:refresh-spotify-github-secrets :github-token '"${{ secrets.BLOG_SECRET_TOKEN }}"' \
             :repo '"${{ github.repository }}"' :refresh-token '"${{ secrets.SPOTIFY_REFRESH_TOKEN }}"' \
             :client-id '"${{ secrets.SPOTIFY_CLIENT_ID }}"' :client-secret '"${{ secrets.SPOTIFY_CLIENT_SECRET }}"' \
-            :refresh-secret '"SPOTIFY_REFRESH_TOKEN"' :access-secret '"SPOTIFY_ACCESS_TOKEN"'
+            :refresh-secret '"SPOTIFY_REFRESH_TOKEN"')
+          echo "::add-mask::$TOKEN"
+          echo "access-token=$TOKEN" >> "$GITHUB_OUTPUT"
       - name: Generate webring
         run: clojure -X:openring
         working-directory: ${{ github.workspace }}
@@ -61,7 +58,7 @@ jobs:
         working-directory: ${{ github.workspace }}
         env:
           UPDATE_NOW_PAGE: "1"
-          SPOTIFY_ACCESS_TOKEN: ${{ secrets.SPOTIFY_ACCESS_TOKEN }}
+          SPOTIFY_ACCESS_TOKEN: ${{ steps.spotify.outputs.access-token }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:

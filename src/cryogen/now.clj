@@ -23,28 +23,20 @@
 
 (def fetch-spotify-top! (memoize fetch-spotify!))
 
-(defn update-gh-secret! [github-token url ^String plaintext key key-id]
-  (http/put
-   url
-   {:content-type :json
-    :form-params
-    {:encrypted_value (-> plaintext
-                          (.getBytes)
-                          (crypto/box-seal key)
-                          (->> (.encodeToString (Base64/getEncoder))))
-     :key_id key-id}
-    :oauth-token github-token}))
+(defn- printerr [& msg]
+  (binding [*out* *err*]
+    (apply println msg)))
 
-(defn refresh-spotify-token! [{:keys [github-token repo refresh-token client-id client-secret refresh-secret access-secret]}]
+(defn refresh-spotify-token! [{:keys [github-token repo refresh-token client-id client-secret refresh-secret]}]
   (let [gh-base-url (str "https://api.github.com/repos/" repo "/actions/secrets/")
         ;; Get public key for secret encryption
-        _ (println "Fetching GitHub public key")
+        _ (printerr "Fetching GitHub public key")
         {:keys [key_id key]} (-> (str gh-base-url "public-key")
                                  (http/get {:as :json :oauth-token github-token})
                                  :body)
         key (.decode (Base64/getDecoder) ^String key)
         ;; Refresh spotify access token & get new refresh token
-        _ (println "Refreshing spotify token")
+        _ (printerr "Refreshing spotify token")
         {access-token :access_token refresh-token :refresh_token}
         (-> (str "https://accounts.spotify.com/api/token")
             (http/post {:as :json
@@ -53,8 +45,17 @@
                         :form-params {:grant_type "refresh_token"
                                       :refresh_token refresh-token}})
             :body)]
-    ;; write spotify tokens back to github secrets
-    (println "Updating github secrets")
+    ;; if a new refresh token was generated, write it back as a github secret
     (when refresh-token
-      (update-gh-secret! github-token (str gh-base-url refresh-secret) refresh-token key key_id))
-    (update-gh-secret! github-token (str gh-base-url access-secret) access-token key key_id)))
+      (printerr "Updating github secret")
+      (http/put
+       (str gh-base-url refresh-secret)
+       {:content-type :json
+        :form-params
+        {:encrypted_value (-> refresh-token
+                              (.getBytes)
+                              (crypto/box-seal key)
+                              (->> (.encodeToString (Base64/getEncoder))))
+         :key_id key_id}
+        :oauth-token github-token}))
+    (println access-token)))
