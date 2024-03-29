@@ -1,5 +1,6 @@
 (ns cryogen.core
   (:require
+   [clojure.pprint :refer [pprint]]
    [cryogen-core.compiler :refer [compile-assets-timed]]
    [cryogen-core.plugins :refer [load-plugins]]
    [cryogen.autolink :as al]
@@ -16,9 +17,14 @@
      :extend-params-fn
      (fn [{{{:keys [instance user]} :bookwyrm} :now :as params} _site-data]
        (println "Fetching bookshelf and spotify data")
-       (-> params
+       (try
+         (-> params
            (assoc-in [:now :books] (now/fetch-bookwyrm-books! instance user))
-           (assoc-in [:now :spotify] (now/fetch-spotify-top! (System/getenv "SPOTIFY_ACCESS_TOKEN")))))}))
+           (assoc-in [:now :spotify] (now/fetch-spotify-top! (System/getenv "SPOTIFY_ACCESS_TOKEN"))))
+         (catch Exception {:keys [uri status body]}
+           (println "Error preparing now page: status" status "for URI" uri)
+           (pprint body)
+           params)))}))
 
 (defn -main []
   (load-plugins)
