@@ -43,7 +43,8 @@ jobs:
           restore-keys: cljdeps-
       - name: Check Spotify access token validity
         id: spotify-check
-        run: curl -H 'Authorization: Bearer ${{ secrets.SPOTIFY_ACCESS_TOKEN }}' https://api.spotify.com/v1/me/top/artists?limit=1
+        run: |
+          curl -H 'Authorization: Bearer ${{ secrets.SPOTIFY_ACCESS_TOKEN }}' https://api.spotify.com/v1/me/top/artists?limit=1
         continue-on-error: true
       - name: Refresh spotify tokens
         if: ${{ failure() && steps.spotify-check.conclusion == 'failure' }}
