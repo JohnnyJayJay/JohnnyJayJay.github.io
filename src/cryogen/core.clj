@@ -21,10 +21,11 @@
          (-> params
            (assoc-in [:now :books] (now/fetch-bookwyrm-books! instance user))
            (assoc-in [:now :spotify] (now/fetch-spotify-top! (System/getenv "SPOTIFY_ACCESS_TOKEN"))))
-         (catch Exception {:keys [uri status body]}
-           (println "Error preparing now page: status" status "for URI" uri)
-           (pprint body)
-           params)))}))
+         (catch Exception e
+           (let [{:keys [uri status body]} (ex-data e)]
+             (println "Error preparing now page: status" status "for URI" uri)
+             (pprint body)
+             params))))}))
 
 (defn -main []
   (load-plugins)
