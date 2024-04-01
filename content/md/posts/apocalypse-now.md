@@ -3,7 +3,7 @@
  :layout :post,
  :date "2024-04-01",
  :description "How I built this blog's 'now' page",
- :comments nil}
+ :comments {:instance "chaos.social" :author "johnny" :id "112194808219011729"}}
 
 Recently, I [stumbled upon](https://rknight.me/blog/the-web-is-fantastic/) the idea of ['now' pages](https://nownownow.com/about) on personal websites. I was looking for things to add to mine because I was (and still am!) pretty motivated to work on something related to this site. The idea of a now page is to tell visitors about what you're currently doing – what you're working on, what music or literature you're enjoying or what's otherwise happening in your life.
 
