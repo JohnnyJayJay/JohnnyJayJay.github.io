@@ -34,7 +34,7 @@
                 <a href="{{book.work}}">
                     <figure class="row media">
                         <img class="col cover" src="{{book.cover.url}}" alt="Cover of the book '{{book.title}}'">
-                        <figcaption class="col text-xs text-center">{{book.title}}{% if book.subtitle %}– {{book.subtitle}}{% endif %}</figcaption>
+                        <figcaption class="col text-xs text-center">{{book.authors|join: ", "}} – {{book.title}}{% if book.subtitle %}: {{book.subtitle}}{% endif %}</figcaption>
                     </figure>
                 </a>
             </li>

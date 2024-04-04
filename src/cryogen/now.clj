@@ -4,11 +4,11 @@
             [caesium.crypto.box :as crypto])
   (:import (java.util Base64)))
 
-;; TODO: include author name (requires additional fetch of authors[0] for each book)
 (defn- fetch-books! [instance user]
   (->> (http/get (str "https://" instance "/user/" user "/books/reading?page=1") {:as :json :accept :json})
        :body
-       :orderedItems))
+       :orderedItems
+       (map (fn [book] (update book :authors (partial map #(:body (http/get % {:as :json :accept :json}))))))))
 
 (def fetch-bookwyrm-books! (memoize fetch-books!))
 
