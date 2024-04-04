@@ -8,7 +8,7 @@
   (->> (http/get (str "https://" instance "/user/" user "/books/reading?page=1") {:as :json :accept :json})
        :body
        :orderedItems
-       (map (fn [book] (update book :authors (partial map #(:body (http/get % {:as :json :accept :json}))))))))
+       (map (fn [book] (update book :authors (partial map #(get-in (http/get % {:as :json :accept :json}) [:body :name])))))))
 
 (def fetch-bookwyrm-books! (memoize fetch-books!))
 
