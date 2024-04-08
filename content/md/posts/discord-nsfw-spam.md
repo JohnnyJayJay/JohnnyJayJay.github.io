@@ -5,7 +5,7 @@
  :description "This just in: horny dudes can't stop falling for phishing",
  :toc true,
  :comments
- {:instance "chaos.social", :author "johnny", :id ""}}
+ {:instance "chaos.social", :author "johnny", :id "112235542897512830"}}
 
 **Disclaimer:** Explicit, pornographic language ahead. However, I've spared you the sight of any NSFW imagery.
 
