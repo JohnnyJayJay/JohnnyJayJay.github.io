@@ -112,7 +112,9 @@ And then... well, nothing else happens. Except that now there is a device logged
 
 You are basically a sleeper bot now – as long as the attacker isn't logged out of your account, they can pretend to be you on Discord. They can't change your password if you have 2FA enabled, but they can join servers, send messages, all that jazz. I've gone through this process with a throwaway account and initially expected that it would immediately reproduce the same kind of spam that led to its theft. But nothing seems to have happened so far. 
 
-Perhaps phished accounts are not managed fully automatically – there might be humans who look at accounts to determine what they could be used for. Or perhaps the time to participate in some bot raid hasn't come yet. In any case, *someone* has access to it now, and they're banking on the fact that I didn't notice I got phished; if I had, I could just invalidate their session in my settings!
+Perhaps phished accounts are not managed fully automatically – there might be humans who look at accounts to determine what they could be used for.[^3] Or perhaps the time to participate in some bot raid hasn't come yet. In any case, *someone* has access to it now, and they're banking on the fact that I didn't notice I got phished; if I had, I could just invalidate their session in my settings!
+
+[^3]: A video by YouTuber "No Text To Speech" has a [section](https://www.youtube.com/watch?v=Gc9E_de_jNU&t=692s) showing the behind the scenes of one of these operations, where the scammers get a notification whenever someone falls for it. The story of how access to this scammer-internal server was obtained is pretty interesting too, give it a watch.
 
 ## What's the goal?
 
@@ -121,12 +123,12 @@ At first, this looks like a fairly straight-forward case of phishing aimed at a 
 First of all, phishing isn't the only thing these servers are involved in. The bigger, 10k+ member server I showed in the beginning cross-promotes a bunch of other Discord servers that, as far as I can tell, don't all try to steal your account. All of them advertise (stolen) NSFW content. They all have some combination of the following:
 
 - supposed content hidden behind "ad walls" – websites telling you to sign up to something, download and use some app or similar before you can access the actual link
-- channels containing actual (stolen) NSFW material[^3]
+- channels containing actual (stolen) NSFW material[^4]
 - promotion of NSFW telegram channels
 - promises to get "premium access" (or whatever) if you promote the server elsewhere
 - "verification" prompts from legitimate (?) Discord bots
 
-[^3]: Just to make this clear: this is still at best a violation of someone's copyright and at worst, especially if the origin of the material is unknown, distribution of content whose creation or publication involved exploitation or abuse.
+[^4]: Just to make this clear: this is still at best a violation of someone's copyright and at worst, especially if the origin of the material is unknown, distribution of content whose creation or publication involved exploitation or abuse.
 
 The invite links to some of those servers were invalid when I received them, indicating that they had been deleted already (perhaps they were other phishing servers). The unique invite code of another seemed to have been taken over by people who have nothing to do with the NSFW spam/scam business, joining it I was greeted with a text channel of random people chatting and a picture of a smiling woman captioned "I tricked yall! Heyyyyyy", which, admittedly, was pretty funny.
 
