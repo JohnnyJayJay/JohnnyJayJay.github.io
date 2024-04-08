@@ -25,9 +25,9 @@ I do plan to return to development a bit more in the near future, though – I w
 
 ## Places
 
-Currently, I'm on vacation on the Greek island of Crete. I'm relaxing, reading and looking at beautiful landscapes.
+Currently, I'm in Karlsruhe, as I have been for most of the past three and a half years (minus the first half of 2023, where I lived in Paris).
 
-There's one more vacation for me this year, although there are no final plans yet. I am going to travel around Belgium and the Netherlands along the coast by train for a week or so. The current idea is to visit 4-ish cities during that time, definitely including Amsterdam and Rotterdam/Den Haag (they're close enough to each other to count as one, right?). I would also really love to see Utrecht on the way back, though I'll possibly have to do so without a companion. Unfortunately plans are generally a bit difficult to make because I don't know when my exams for that semester will take place yet. There are no official summer holidays at my university 😐
+There's a bigger vacation for me later this year, although there are no final plans yet. I am going to travel around Belgium and the Netherlands along the coast by train for a week or so. The current idea is to visit 4-ish cities during that time, definitely including Amsterdam and Rotterdam/Den Haag (they're close enough to each other to count as one, right?). I would also really love to see Utrecht on the way back, though I'll possibly have to do so without a companion. Unfortunately plans are generally a bit difficult to make because I don't know when my exams for that semester will take place yet. There are no official summer holidays at my university 😐
 
 ## More Statuses
 
