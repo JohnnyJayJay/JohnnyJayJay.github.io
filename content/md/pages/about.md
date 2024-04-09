@@ -13,7 +13,7 @@ I study computer science at the Karlsruhe Institute of Technology (KIT) in Germa
 
 Over the last couple of years, computer science has captivated me, not just in terms of my career and studies, but also personally. I have dipped my toes into many different areas of the field, especially in programming. And I try to continue to expand my horizon almost every day.
 
-On the other hand, I am highly critical of many current technological developments. I want a web that belongs to the people instead of a handful of big corporations; I believe the internet advertising industry in its current form must be abolished; I reject the notion that technology is apolitical and that constant expansion is the ultimate good. I'm for privacy, data protection, user control on the technical side, and for ethics, solidarity and community organisation on the social and structural side of technology.
+On the other hand, I am highly critical of many current technological developments. I reject the notion that technology is apolitical and that constant expansion is the ultimate good. I'm for privacy, data protection, user control on the technical side, and for ethics, solidarity and community organisation on the social and structural side of technology.
 
 Tech topics don't take up my whole life, however. Here are a few of my other hobbies and interests:
 
