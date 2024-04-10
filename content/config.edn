@@ -14,7 +14,7 @@
  :rss-filters                  ["programming"]
  :recent-posts                 3
  :post-date-format             "yyyy-MM-dd"
- :archive-group-format         "yyyy MMMM"
+ :archive-group-format         "yyyy"
  :sass-src                     []
  :sass-path                    "node_modules/sass/sass.js"
  :theme                        "chota"

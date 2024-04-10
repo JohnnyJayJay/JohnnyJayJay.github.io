@@ -35,7 +35,11 @@ Step 2
 Add a star and create a fork for the project. To do this, follow the tutorial in #add-star-and-fork
 Done, now all you have to do is enter your github username in the channel #validate-username and you'll receive your mega links automatically">
 
-Ah yes yes, of course, makes perfect sense. 
+<img src="/img/discord-nsfw/star-and-fork.jpg" width="900" alt="Screenshot of some Discord messages in channel 'add-star-and-fork'. Content: Now click on the following link: https://github.com/Prescoter/Emora-Project (if you don't have a github account yet, create one with the tutorial in #create-github-acc)
+Once on the page, click on this button (screenshot of GitHub UI with star button marked with red circle attached)
+That's it, you've just sent your star to the github repo, now all you have to do is create a fork, and you're done!">
+
+Ah yes yes, of course, makes perfect sense. A completely reasonable and unsuspicious thing to ask.
 
 Now, what is that repo?
 
