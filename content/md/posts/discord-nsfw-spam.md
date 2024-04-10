@@ -112,9 +112,11 @@ And then... well, nothing else happens. Except that now there is a device logged
 
 You are basically a sleeper bot now – as long as the attacker isn't logged out of your account, they can pretend to be you on Discord. They can't change your password if you have 2FA enabled, but they can join servers, send messages, all that jazz. I've gone through this process with a throwaway account and initially expected that it would immediately reproduce the same kind of spam that led to its theft. But nothing seems to have happened so far. 
 
-Perhaps phished accounts are not managed fully automatically – there might be humans who look at accounts to determine what they could be used for.[^3] Or perhaps the time to participate in some bot raid hasn't come yet. In any case, *someone** has access to it now, and they're banking on the fact that I didn't notice I got phished; if I had, I could just invalidate their session in my settings!
+Perhaps phished accounts are not managed fully automatically – there might be humans who look at accounts to determine what they could be used for.[^3] Or perhaps the time to participate in some bot raid hasn't come yet. In any case, *someone* has access to it now, and they're banking on the fact that I didn't notice I got phished; if I had, I could just invalidate their session in my settings!
 
 **Edit (2024-04-09):** The account sent a spam message advertising the same scam yesterday evening, i.e. approximately one and a half days after I intentionally compromised it. Unfortunately I do not have access to it myself anymore, so I cannot check whether anything else has been done to it. I'll keep it on my test server to see whether it will be used for other bot spam in the future and update this section if anything else interesting emerges.
+
+**Edit (2024-04-10):** Another interesting scam has emerged that isn't directed at Discord users, but at developers! I've decided to write a short [follow-up post](/posts/discord-nsfw-spam-2) about it because it is too much to explain here.
 
 [^3]: A video by YouTuber "No Text To Speech" has a [section](https://www.youtube.com/watch?v=Gc9E_de_jNU&t=692s) showing the behind the scenes of one of these operations, where the scammers get a notification whenever someone falls for it. The story of how access to this scammer-internal server was obtained is pretty interesting too, give it a watch.
 

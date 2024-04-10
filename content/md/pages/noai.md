@@ -20,7 +20,7 @@ Instead of making this a longer-form essay, I've decided to use the rest of this
 - LLMs are mechanical psychics – about the parallels between belief in mentalism and "Artificial General Intelligence"\
   <https://softwarecrisis.dev/letters/llmentalist/>
 - Have we reached peak AI?\
-  <https://www.wheresyoured.at/peakai/
+  <https://www.wheresyoured.at/peakai/>
 - AI as a tool for humans vs. humans as a tool for AI
   <https://pluralistic.net/2024/04/01/human-in-the-loop/>
 - AI is controlled and gatekept by a few powerful corporations, making research for the public good increasingly difficult\
