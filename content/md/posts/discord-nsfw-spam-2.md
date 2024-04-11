@@ -2,11 +2,12 @@
  :tags ["discord" "github"],
  :layout :post,
  :date "2024-04-11",
- :description "A new attack emerges in the Discord NSFW spam saga"}
+ :description "A new attack emerges in the Discord NSFW spam saga",
+ :comments {:instance "chaos.social", :author "johnny", :id "112251790573757018"}}
 
 Just a few days ago, I posted about [the NSFW spam epidemic on Discord](/posts/discord-nsfw-spam). The gist of it: bots promote servers that promise you NSFW content if you "verify your account" on a phishing site that imitates the Discord login page. I created a throwaway account, intentionally got it phished and gave it access to a single channel on one of my own servers to see what (if anything) the attackers would use it to post. As expected, it didn't take long for it to be used to promote the same kind of phishing scam. But today I saw that it got used to push something different, a scam that *uses* Discord horndogs to help with a *different* attack whose real target seems to be GitHub users.
 
-I'm also posting this as a thread on Mastodon (soon) because it's a fairly short story. Leave your comments there if you have any.
+I'm also posting this as a [thread on Mastodon](https://chaos.social/@johnny/112251735545404504) because it's a fairly short story. Leave your comments [there](https://chaos.social/@johnny/112251790573757018) if you have any.
 
 ## Story
 
