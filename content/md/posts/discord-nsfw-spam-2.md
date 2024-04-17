@@ -54,7 +54,7 @@ And sure enough, those [seem to be malware](https://www.virustotal.com/gui/file/
 
 ## That's it
 
-So, I suppose there's nothing too surprising in this story at the end of the day. I've reported the repository on GitHub (you should do the same). But I found the setup for this operation pretty out of the ordinary. Genius, really: why buy GitHub bots if you have an completely disconnected, real army of people on Discord who will follow even your most ridiculous order as long as they think they get porn at the end?
+So, I suppose there's nothing too surprising in this story at the end of the day. I've reported the repository on GitHub (you should do the same). But I found the setup for this operation pretty out of the ordinary. Genius, really: why buy GitHub bots if you have a completely disconnected, real army of people on Discord who will follow even your most ridiculous order as long as they think they get porn at the end?
 
 [^1]: Look, I've defended people falling for mediocre phishing, but to fall for this you have to be incredibly gullible. There are *so* many red flags here I can't believe anyone is actually doing this.
 

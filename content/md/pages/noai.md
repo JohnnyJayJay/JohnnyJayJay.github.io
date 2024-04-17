@@ -21,7 +21,7 @@ Instead of making this a longer-form essay, I've decided to use the rest of this
   <https://softwarecrisis.dev/letters/llmentalist/>
 - Have we reached peak AI?\
   <https://www.wheresyoured.at/peakai/>
-- AI as a tool for humans vs. humans as a tool for AI
+- AI as a tool for humans vs. humans as a tool for AI\
   <https://pluralistic.net/2024/04/01/human-in-the-loop/>
 - AI is controlled and gatekept by a few powerful corporations, making research for the public good increasingly difficult\
   <https://www.washingtonpost.com/technology/2024/03/10/big-tech-companies-ai-research/>
