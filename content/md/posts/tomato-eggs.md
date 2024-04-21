@@ -5,7 +5,7 @@
  :date "2024-04-21",
  :tags ["cooking" "food" "recipe"]
  :comments
- {:instance "chaos.social", :author "johnny"}}
+ {:instance "chaos.social", :author "johnny", :id "112309947175766618"}}
 
 On most days, I don't eat anything for breakfast. I tend to eat somewhat early lunch instead – when I'm on campus in the morning, I often go to the uni's canteen before noon, and otherwise I usually start preparing lunch early. So it's maybe a bit strange for me to include a dish in my [recipe hall of fame](/posts/lentil-rice) that is generally considered a breakfast dish (unless, of course, we acknowledge that what tastes good in the morning probably also tastes good at another time).
 
@@ -64,6 +64,6 @@ Ok, I'll admit, preserved lemons are not that easy to find. I just listed them b
 
 I often break up the eggs after they've been mostly cooked, so it ends up being kind of a mix between poached and scrambled. If you scramble the eggs completely, you'll basically get the Turkish tomatoes-and-egg dish _menemen_, which is otherwise pretty similar.
 
-![](/img/tomato-eggs/shakshouka.jpg)
+![A deep non-stick frying pan containing some shakshouka. The cooked eggs have been broken up into smaller pieces and partially covered with the tomato sauce. You can see some fresh cherry tomatoes and little bits of black from eggplant pieces. Some raisins are also visible.](/img/tomato-eggs/shakshouka.jpg)
 
 
