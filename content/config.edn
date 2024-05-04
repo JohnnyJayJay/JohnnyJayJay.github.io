@@ -1,7 +1,7 @@
 {:site-title                   "Left Fold"
  :author                       "JohnnyJayJay"
  :description                  "A personal blog about programming topics I enjoy"
- :site-url                     "http://leftfold.tech/"
+ :site-url                     "https://www.leftfold.tech/"
  :post-root                    "posts"
  :page-root                    "pages"
  :post-root-uri                "posts"
