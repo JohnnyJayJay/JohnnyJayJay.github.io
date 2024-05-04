@@ -14,3 +14,13 @@ https://buttondown.email/ownyourweb/rss
 https://lynnandtonic.com/feed.xml
 http://radar.spacebar.org/f/a/weblog/rss/1
 https://jvns.ca/atom.xml
+https://www.wheresyoured.at/rss/
+https://stefanbohacek.com/feed/
+https://annalist.noblogs.org/feed
+https://tangleofwires.substack.com/feed
+https://www.malteengeler.de/feed/
+https://www.bloodinthemachine.com/feed
+https://blog.cassidoo.co/rss.xml
+https://boehs.org/in/blog.xml
+https://www.emilygorcenski.com/index.xml
+https://youngvulgarian.substack.com/feed

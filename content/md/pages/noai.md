@@ -16,14 +16,14 @@ Instead of making this a longer-form essay, I've decided to use the rest of this
 - Today's AI is unreasonable\
   <https://www.anildash.com/2023/06/08/ai-is-unreasonable/>
 - AI destroys the web's signal-to-noise ratio for good and sabotages itself in the process\
-  <https://pluralistic.net/2024/03/14/inhuman-centipede/> (1)\
-  <https://pluralistic.net/2024/04/23/maximal-plausibility/> (2)
+  <https://pluralistic.net/2024/03/14/inhuman-centipede/>
 - LLMs are mechanical psychics – about the parallels between belief in mentalism and "Artificial General Intelligence"\
   <https://softwarecrisis.dev/letters/llmentalist/>
 - Have we reached peak AI?\
   <https://www.wheresyoured.at/peakai/>
 - AI as a tool for humans vs. humans as a tool for AI\
-  <https://pluralistic.net/2024/04/01/human-in-the-loop/>
+  <https://pluralistic.net/2024/04/01/human-in-the-loop/> (1)\
+  <https://pluralistic.net/2024/04/23/maximal-plausibility/> (2)
 - AI isn't useless. But is it worth it?\
   <https://www.citationneeded.news/ai-isnt-useless/>
 - LLMs pose a risk of losing human creation in the public commons of the web\
