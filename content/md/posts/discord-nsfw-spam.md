@@ -31,6 +31,8 @@ These spam messages are undoubtedly sent by a computer program rather than actua
 
 The accounts disseminating the spam are already a member of the servers at the time of posting spam, i.e. the bots post messages, but do not seem to actively join new servers to do so. This makes (some of) the traditional spam protection on Discord's side ineffective against them: they cannot be detected based on account age or joining behaviour, for example.
 
+**Update (2024-05-05)**: I've seen multiple instances of bots joining (public) servers right before spamming now, so this may not be accurate anymore – perhaps the scammers are trying new ways to increase their reach.
+
 ## What happens if you click?
 
 Ok, now for the interesting part. You see the message, decide to be kind of a creep, ignore common sense and click. What happens?
@@ -114,9 +116,9 @@ You are basically a sleeper bot now – as long as the attacker isn't logged out
 
 Perhaps phished accounts are not managed fully automatically – there might be humans who look at accounts to determine what they could be used for.[^3] Or perhaps the time to participate in some bot raid hasn't come yet. In any case, *someone* has access to it now, and they're banking on the fact that I didn't notice I got phished; if I had, I could just invalidate their session in my settings!
 
-**Edit (2024-04-09):** The account sent a spam message advertising the same scam yesterday evening, i.e. approximately one and a half days after I intentionally compromised it. Unfortunately I do not have access to it myself anymore, so I cannot check whether anything else has been done to it. I'll keep it on my test server to see whether it will be used for other bot spam in the future and update this section if anything else interesting emerges.
+**Update (2024-04-09):** The account sent a spam message advertising the same scam yesterday evening, i.e. approximately one and a half days after I intentionally compromised it. Unfortunately I do not have access to it myself anymore, so I cannot check whether anything else has been done to it. I'll keep it on my test server to see whether it will be used for other bot spam in the future and update this section if anything else interesting emerges.
 
-**Edit (2024-04-10):** Another interesting scam has emerged that isn't directed at Discord users, but at developers! I've decided to write a short [follow-up post](/posts/discord-nsfw-spam-2) about it because it is too much to explain here.
+**Update (2024-04-10):** Another interesting scam has emerged that isn't directed at Discord users, but at developers! I've decided to write a short [follow-up post](/posts/discord-nsfw-spam-2) about it because it is too much to explain here.
 
 [^3]: A video by YouTuber "No Text To Speech" has a [section](https://www.youtube.com/watch?v=Gc9E_de_jNU&t=692s) showing the behind the scenes of one of these operations, where the scammers get a notification whenever someone falls for it. The story of how access to this scammer-internal server was obtained is pretty interesting too, give it a watch.
 
@@ -136,13 +138,37 @@ First of all, phishing isn't the only thing these servers are involved in. The b
 
 The invite links to some of those servers were invalid when I received them, indicating that they had been deleted already (perhaps they were other phishing servers). The unique invite code of another seemed to have been taken over by people who have nothing to do with the NSFW spam/scam business, joining it I was greeted with a text channel of random people chatting and a picture of a smiling woman captioned "I tricked yall! Heyyyyyy", which, admittedly, was pretty funny.
 
-I digress. The point I was getting to is that this spam/scam operation seems to have multiple goals, based on the content of other servers in those networks:
+I digress. The point I was getting to is that this spam/scam operation seems to have multiple goals, based on the content of other servers in those networks, and all of them try to extract money in some way or another.
 
-1. turning accounts into sleeper agents via phishing, presumably to sell them as part of a bot net.
-2. generating ad revenue through ad wall websites or extracting money from people in other ways
-3. artificially growing Discord servers to potentially sell them later.
+### Insider info
 
-This is what I think anyway, obviously these servers are not interested in sharing their business model, so we can't know for sure what's going on.
+There used to be a section of me speculating about the broader business model of the scam at this point – thoughts on what the big picture might be. However, since writing the first version of this article and its [follow-up](/posts/discord-nsfw-spam-2), I've spoken to a person who, by their own account, has been observing the Discord scamming scene for more than 10 months and was able to tell me a lot more about what's going on behind the scenes. What follows is based on their claims, but it's all plausible to me and I've seen enough evidence to believe the parts I couldn't verify directly.
+
+First, the scammers' primary goal is to get Discord accounts *with payment information in them*. When you pay Discord for [Nitro](https://discord.com/nitro), you can save, for example, your credit card details in your account so it gets renewed automatically. Your personal subscription with Discord is of no interest for the scammers. But they can use the payment settings intended for *that* to buy gift subscriptions for *others*. The business, then, is simple: take over accounts via phishing, make them buy Discord Nitro and sell it on the black market at a lower price than Discord. Accounts without payment information attached to them (like my throwaway) are simply repurposed as spam bots to further promote the scam.
+
+> This may sound stupid, but I can assure you that given the huge quantity of nitros these people are selling, well, they're quite profitable. I've seen one of them sell over 120 yearlies nitro at €12 each in one afternoon, making almost €1,500.
+
+Note: the regular price for Discord Nitro [in the Western world](https://support.discord.com/hc/en-us/articles/4407269525911-Nitro-Localized-Pricing-FAQ) is *100€* per year. 
+
+I also got an invite link to "one of the biggest servers selling stolen nitro", a server called "Wumpus Paradise V3" with 1.5k members. Multiple scammers seem to use it as a marketplace, announcing in their respective channels when they "restock", i.e. when they've stolen enough accounts again to buy Nitro in bulk. Right around the time I joined that server, a scammer going by the name "Baksa" (and who I'm sure is a lovely fellow in person, judging by the fact they put "na/zi" as their pronouns) announced they would soon bulk-buy and sell Nitro monthly subscriptions again. The price for these stolen subscriptions was $3 each in this case (in crypto, of course), which is therefore slightly cheaper than buying it "legitimately" through a VPN in Turkey, where it's currently the cheapest at ₺104.99 (roughly \$3).
+
+Lurking in the general chat of that server, I didn't get the impression the people hanging around there were the brightest lights in the harbour. Though I did get to witness some messages that felt rather absurd, like this person being annoyed at the scammer taking so long opening their sales that they even had time to go to church in the meantime:
+
+<figure>
+    <img src="/img/discord-nsfw/scam-server-church-msg.jpg" alt="Screenshot of a Discord message in French by a user named 'Lina' telling the scammer they've been waiting (and going to church)">
+    <figcaption>"The crypto has been ready for 3h lmao. I've even had time to go to church" – the French style of life</figcaption>
+</figure>
+
+Thoughts and prayers.
+
+### Phishing as a Service
+
+Now, one thing about this scam was really interesting to me from the get-go: why does it always look the same? Contrary to what one might think, it's not because the scammers are all working together, but because they're all using the same *phishing service provider*:
+
+> The owner of this server started this type of scam for the first time over a year ago, and has recently created a full phishing service.\
+> 95% of scammers (there are over 50 different people behind these servers, and growing) use his phishing service, which does almost everything for them
+
+Yep, that's right. He may not make an effort to appear serious (unlike the guy behind the [stalkerware](https://arstechnica.com/tech-policy/2024/04/billions-of-public-discord-messages-may-be-sold-through-a-scraping-service/) of recent controversy) but there *is* a guy out there who genuinely offers "phishing subscriptions" to low-skill scammers. A telegram channel I've joined serves as a hub for updates on the latest development, new features, new domains and downtimes. Telegram also appears to be the place where subscribers receive notifications whenever someone falls for the scam.
 
 ## Countermeasures
 
@@ -152,7 +178,7 @@ If you manage a server and want to block this kind of spam, there is an easy way
 
 This will block all invite links unless explicitly allowed (which, in my eyes, is a sensible default), time out members sending them (preventing multi-channel spam) and alerting you about this behaviour in a select channel, where you can then decide whether it's something actionable.
 
-As for how to deal with the accounts disseminating the spam, you should either ban or kick them. I see kicking as a viable option because nothing indicates that these bots (re)join any Discord servers and the people behind them might get their account back/invalidate the malicious session. Banning is certainly the safe option, though, given that the accounts might also be used for different attacks.
+As for how to deal with the accounts disseminating the spam, you should either ban or kick them. I see kicking as a viable option because the phishing victims might get their account back/invalidate the malicious session. Banning is certainly the safe option, though, given that the accounts might be made to rejoin the server or used for different attacks.
 
 If you have another free minute, you can also use it to head over to the server and report the phishing domain it gives you to [Google Safe Browsing](https://safebrowsing.google.com/safebrowsing/report_general/). This service is used by both Chrome and Firefox, and if enough people report the phishing site, users will be warned about it by their browsers. The domain that stole my throwaway account is already gone.
 
