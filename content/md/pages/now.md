@@ -7,11 +7,12 @@ Aren't you just burning to know what I'm up to at the moment? No? Well, here you
 
 I'm now in my eigth semester of studying computer science (B.Sc.). This semester, I'm learning more about:
 
-- German private law
+- German private and trade law
 - EU digital regulation
-- Cybersecurity
-- Software sustainability
-- Psychology and interface design
+- IT security
+- phishing attacks (for a paper)
+- digital ethics in the context of big data (for a paper)
+- human-computer interaction, user studies, UI/UX
 
 The end of my studies is approaching – after this semester, I will likely have collected everything I need to graduate (except for the thesis). I'm still debating whether I should aim to write my Bachelor's thesis in this year's winter semester, or wait until next year. If I wait another semester, I could participate in a couple more interesting courses and lectures while I'm here without having any pressure. This would also give me some time to think about what my thesis should even be about.
 
@@ -27,7 +28,7 @@ I do plan to return to development a bit more in the near future, though – I w
 
 Currently, I'm in Karlsruhe, as I have been for most of the past three and a half years (minus the first half of 2023, where I lived in Paris).
 
-There's a bigger vacation for me later this year, although there are no final plans yet. I am going to travel around Belgium and the Netherlands along the coast by train for a week or so. The current idea is to visit 4-ish cities during that time, definitely including Amsterdam and Rotterdam/Den Haag (they're close enough to each other to count as one, right?). I would also really love to see Utrecht on the way back, though I'll possibly have to do so without a companion. Unfortunately plans are generally a bit difficult to make because I don't know when my exams for that semester will take place yet. There are no official summer holidays at my university 😐
+This summer, I'm going to travel around Belgium and the Netherlands by train for a week on vacation. Later this year, I'm also going to attend the [Heart of Clojure](https://2024.heartofclojure.eu/#) in Leuven, Belgium!
 
 ## More Statuses
 
