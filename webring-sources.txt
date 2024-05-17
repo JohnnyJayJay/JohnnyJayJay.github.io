@@ -24,3 +24,4 @@ https://blog.cassidoo.co/rss.xml
 https://boehs.org/in/blog.xml
 https://www.emilygorcenski.com/index.xml
 https://youngvulgarian.substack.com/feed
+https://popagandhi.com/feed.xml
