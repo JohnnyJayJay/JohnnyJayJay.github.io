@@ -4,7 +4,7 @@
 :date "2024-05-17",
 :description "Social masks, the online-offline blur and dysfunctional notions of who we are",
 :comments
-{:instance "chaos.social", :author "johnny", :id ""}}
+{:instance "chaos.social", :author "johnny", :id "112457898254887742"}}
 
 There is one dreadfully existential question I've asked myself a lot over the last couple years: "Who am I?"
 
